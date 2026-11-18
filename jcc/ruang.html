@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Katalog ruang — Prototipe revamp Jakarta Convention Center.">
+  <title>Katalog ruang | Jakarta Convention Center</title>
+  <link rel="stylesheet" href="../assets/jcc.css">
+  <script defer src="../assets/jcc.js"></script>
+</head>
+<body class="jccx inner">
+  <a class="skip" href="#main">Langsung ke konten</a>
+  <header class="site-mast">
+    <div class="site-utility"><div class="site-width"><a href="../index.html">← Kajian revamp</a><span>Prototipe desain · Foto ilustratif</span></div></div>
+    <div class="site-width site-nav">
+      <a class="site-brand" href="../jcc.html" aria-label="Jakarta Convention Center, beranda"><span>Jakarta<br>Convention Center</span></a>
+      <nav aria-label="Navigasi utama"><a href="ruang.html" aria-current="page">Ruang</a><a href="perencana.html">Rencanakan acara</a><a href="agenda.html">Agenda</a><a href="kunjungan.html">Kunjungan</a></nav>
+      <a href="perencana.html#brief" class="jx-outline">Minta penawaran ↗</a>
+    </div>
+  </header>
+  <main id="main">
+<header class="jx-page site-width"><p class="eyebrow">JAKARTA CONVENTION CENTER</p><h1>Ruang & kapasitas.</h1><p>Pilih konfigurasi, tentukan jumlah peserta, atau bandingkan dua ruang sebelum mempelajari denah.</p></header>
+    <section class="site-width jx-catalog" aria-label="Katalog ruang JCC">
+      <div class="jx-controls">
+        <label>Konfigurasi<select id="setup"><option value="">Semua konfigurasi</option><option>Teater</option><option>Jamuan duduk</option><option>Buffet</option><option>Kelas</option><option>Resepsi</option><option>Pameran</option></select></label>
+        <label>Minimum peserta<input id="attendance" type="number" min="1" step="1" inputmode="numeric" placeholder="Contoh: 1.500"></label>
+        <a href="#bandingkan" class="jx-under">Bandingkan ruang ↓</a>
+      </div>
+      <p id="room-count" class="note" aria-live="polite">6 ruang pilihan</p>
+      <p class="note">Filter jumlah peserta hanya memasukkan ruang dengan kapasitas yang dipublikasikan untuk konfigurasi terkait.</p>
+      <p id="no-rooms" class="jx-empty" hidden>Belum ada ruang yang memenuhi filter ini. Coba konfigurasi lain atau kosongkan jumlah peserta.</p>
+      <article class="room-entry" data-room-card data-config="{&quot;Teater&quot;: 5000}">
+      <a class="room-picture" tabindex="-1" aria-hidden="true" href="plenary.html"><img src="../assets/jcc-hero.webp" alt="" loading="lazy"></a>
+      <div><p class="eyebrow">Konvensi & pertunjukan</p><h2><a href="plenary.html">Plenary Hall</a></h2><p>Auditorium melingkar dengan area duduk di lantai utama dan mezzanine. Akses dari Main Lobby.</p><dl class="jx-spec"><div><dt>Teater</dt><dd>5.000</dd></div></dl></div>
+      <div class="room-entry-actions"><a href="plenary.html" class="jx-outline">Detail ruang ↗</a><a href="https://www.jcc.co.id/userfiles/post/2001215E26BEA88EFB9.pdf" class="jx-under">Denah PDF ↗</a></div></article><article class="room-entry" data-room-card data-config="{&quot;Jamuan duduk&quot;: 2500, &quot;Buffet&quot;: 4500}">
+      <a class="room-picture" tabindex="-1" aria-hidden="true" href="assembly.html"><img src="../assets/jcc-assembly.webp" alt="" loading="lazy"></a>
+      <div><p class="eyebrow">Jamuan & konferensi</p><h2><a href="assembly.html">Assembly Hall</a></h2><p>Ruang perjamuan berskala besar yang dapat dibagi menjadi tiga zona dengan partisi bergerak.</p><dl class="jx-spec"><div><dt>Jamuan duduk</dt><dd>2.500</dd></div><div><dt>Buffet</dt><dd>4.500</dd></div></dl></div>
+      <div class="room-entry-actions"><a href="assembly.html" class="jx-outline">Detail ruang ↗</a><a href="https://www.jcc.co.id/userfiles/post/2001215E26BFDC20C68.pdf" class="jx-under">Denah PDF ↗</a></div></article><article class="room-entry" data-room-card data-config="{&quot;Jamuan duduk&quot;: 1300, &quot;Kelas&quot;: 1400, &quot;Teater&quot;: 2000, &quot;Resepsi&quot;: 1800}">
+      <a class="room-picture" tabindex="-1" aria-hidden="true" href="cendrawasih.html"><div class="jx-drawing drawing-cendrawasih" aria-hidden="true"><i></i><i></i><i></i></div></a>
+      <div><p class="eyebrow">Konferensi & jamuan</p><h2><a href="cendrawasih.html">Cendrawasih Room</a></h2><p>Ruang fleksibel dengan partisi bergerak, bilik penerjemah, dan perangkat pendukung rapat.</p><dl class="jx-spec"><div><dt>Jamuan duduk</dt><dd>1.300</dd></div><div><dt>Kelas</dt><dd>1.400</dd></div><div><dt>Teater</dt><dd>2.000</dd></div><div><dt>Resepsi</dt><dd>1.800</dd></div></dl></div>
+      <div class="room-entry-actions"><a href="cendrawasih.html" class="jx-outline">Detail ruang ↗</a><a href="https://www.jcc.co.id/userfiles/post/2001215E26BF745B939.pdf" class="jx-under">Denah PDF ↗</a></div></article><article class="room-entry" data-room-card data-config="{&quot;Pameran&quot;: null}">
+      <a class="room-picture" tabindex="-1" aria-hidden="true" href="hall-a.html"><div class="jx-drawing drawing-hall-a" aria-hidden="true"><i></i><i></i><i></i></div></a>
+      <div><p class="eyebrow">Pameran</p><h2><a href="hall-a.html">Exhibition Hall A</a></h2><p>Hall pameran dengan akses langsung untuk truk. Dapat dihubungkan ke Exhibition Hall B melalui koridor.</p><dl class="jx-spec"><div><dt>Pameran</dt><dd>Konfirmasi ke JCC</dd></div></dl></div>
+      <div class="room-entry-actions"><a href="hall-a.html" class="jx-outline">Detail ruang ↗</a><a href="https://www.jcc.co.id/userfiles/post/2001215E26BF3529F37.pdf" class="jx-under">Denah PDF ↗</a></div></article><article class="room-entry" data-room-card data-config="{&quot;Pameran&quot;: null}">
+      <a class="room-picture" tabindex="-1" aria-hidden="true" href="hall-b.html"><div class="jx-drawing drawing-hall-b" aria-hidden="true"><i></i><i></i><i></i></div></a>
+      <div><p class="eyebrow">Pameran</p><h2><a href="hall-b.html">Exhibition Hall B</a></h2><p>Hall pameran terbesar di antara Hall A dan B. Keduanya dapat dihubungkan untuk menyediakan area gabungan 9.585 m².</p><dl class="jx-spec"><div><dt>Pameran</dt><dd>Konfirmasi ke JCC</dd></div></dl></div>
+      <div class="room-entry-actions"><a href="hall-b.html" class="jx-outline">Detail ruang ↗</a><a href="https://www.jcc.co.id/userfiles/post/2001215E26BEF1ADEA8.pdf" class="jx-under">Denah PDF ↗</a></div></article><article class="room-entry" data-room-card data-config="{&quot;Pameran&quot;: null}">
+      <a class="room-picture" tabindex="-1" aria-hidden="true" href="main-lobby.html"><img src="../assets/jcc-venue.webp" alt="" loading="lazy"></a>
+      <div><p class="eyebrow">Registrasi & pameran</p><h2><a href="main-lobby.html">Main Lobby</a></h2><p>Area serbaguna untuk registrasi, pameran, dan rehat antarsesi. Lobby juga menjadi akses ke sejumlah hall utama.</p><dl class="jx-spec"><div><dt>Pameran</dt><dd>Konfirmasi ke JCC</dd></div></dl></div>
+      <div class="room-entry-actions"><a href="main-lobby.html" class="jx-outline">Detail ruang ↗</a><a href="https://www.jcc.co.id/userfiles/post/2001215E26C04FBCA26.pdf" class="jx-under">Denah PDF ↗</a></div></article>
+      <p class="note">Untuk ruang pertemuan lainnya, lihat <a href="https://www.jcc.co.id/event_planning/room_space" class="jx-under">katalog resmi JCC ↗</a>.</p>
+    </section>
+    <section class="jx-compare page-block" id="bandingkan">
+      <div class="site-width">
+        <h2>Bandingkan ruang.</h2><p>Cocokkan kapasitas per konfigurasi. Tanda pisah berarti prototype ini belum memuat kapasitas untuk konfigurasi tersebut.</p>
+        <div class="jx-controls">
+          <label>Ruang pertama<select id="compare-a"><option value="plenary">Plenary Hall</option><option value="assembly">Assembly Hall</option><option value="cendrawasih">Cendrawasih Room</option><option value="hall-a">Exhibition Hall A</option><option value="hall-b">Exhibition Hall B</option><option value="main-lobby">Main Lobby</option></select></label>
+          <label>Ruang kedua<select id="compare-b"><option value="plenary">Plenary Hall</option><option value="assembly" selected>Assembly Hall</option><option value="cendrawasih">Cendrawasih Room</option><option value="hall-a">Exhibition Hall A</option><option value="hall-b">Exhibition Hall B</option><option value="main-lobby">Main Lobby</option></select></label>
+        </div>
+        <div id="comparison" aria-live="polite"></div>
+        <noscript><p>Perbandingan interaktif memerlukan JavaScript. Kapasitas tiap ruang tetap tersedia di katalog di atas.</p></noscript>
+        <script type="application/json" id="room-data">[{"id": "plenary", "name": "Plenary Hall", "fact": "5.000 kursi", "spec": {"Teater": 5000}, "extras": [["Akses", "Main Lobby, lantai utama, dan mezzanine"], ["Dukungan acara", "LED, mikrofon konferensi digital, dan interpretasi simultan"]]}, {"id": "assembly", "name": "Assembly Hall", "fact": "3.921 m²", "spec": {"Jamuan duduk": 2500, "Buffet": 4500}, "extras": [["Luas", "3.921 m²"], ["Pembagian ruang", "Partisi untuk tiga ruang terpisah"]]}, {"id": "cendrawasih", "name": "Cendrawasih Room", "fact": "2.109 m²", "spec": {"Jamuan duduk": 1300, "Kelas": 1400, "Teater": 2000, "Resepsi": 1800}, "extras": [["Dimensi", "63,6 × 33,17 × 8 m"], ["Dukungan acara", "Bilik interpretasi, mikrofon konferensi, dan sistem voting"]]}, {"id": "hall-a", "name": "Exhibition Hall A", "fact": "3.060 m²", "spec": {"Pameran": null}, "extras": [["Luas", "3.060 m²"], ["Dimensi", "68 × 45 × 9 m"], ["Beban lantai", "1.200 kg/m²"], ["Akses logistik", "Truk dapat masuk langsung ke hall"]]}, {"id": "hall-b", "name": "Exhibition Hall B", "fact": "6.075 m²", "spec": {"Pameran": null}, "extras": [["Luas", "6.075 m²"], ["Tinggi plafon", "9 m"], ["Beban lantai", "1.500 kg/m²"], ["Akses logistik", "Truk dapat masuk langsung ke hall"]]}, {"id": "main-lobby", "name": "Main Lobby", "fact": "5.500 m²", "spec": {"Pameran": null}, "extras": [["Luas", "5.500 m²"], ["Kegunaan", "Registrasi, pameran, dan kebutuhan sebelum sesi utama"]]}]</script>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="site-width">
+      <a class="site-brand" href="../jcc.html"><span>Jakarta<br>Convention Center</span></a>
+      <nav aria-label="Navigasi studi"><a href="../index.html">Kajian revamp</a><a href="../gbk.html">Konsep GBK ↗</a><a href="https://www.jcc.co.id/">Situs resmi ↗</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
