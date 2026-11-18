@@ -1,28 +1,37 @@
 const carousel = document.querySelector('[data-carousel]');
 if (carousel) {
   const frames = [...carousel.querySelectorAll('[data-slide]')];
-  const controls = [...carousel.querySelectorAll('[data-frame]')];
+  let currentIndex = 0;
+  let timerId = null;
 
   function selectFrame(index) {
+    currentIndex = (index + frames.length) % frames.length;
     for (const [position, frame] of frames.entries()) {
-      frame.hidden = position !== index;
-      if (controls[position]) {
-        controls[position].setAttribute('aria-pressed', String(position === index));
-      }
+      frame.hidden = position !== currentIndex;
     }
   }
 
-  for (const [index, button] of controls.entries()) {
-    button.addEventListener('click', () => selectFrame(index));
-    button.addEventListener('keydown', event => {
-      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-      event.preventDefault();
-      const step = event.key === 'ArrowRight' ? 1 : -1;
-      const next = (index + step + controls.length) % controls.length;
-      selectFrame(next);
-      controls[next].focus();
-    });
+  function startAutoSlide() {
+    stopAutoSlide();
+    if (frames.length > 1) {
+      timerId = setInterval(() => {
+        selectFrame(currentIndex + 1);
+      }, 3800);
+    }
   }
+
+  function stopAutoSlide() {
+    if (timerId) {
+      clearInterval(timerId);
+      timerId = null;
+    }
+  }
+
+  carousel.addEventListener('mouseenter', stopAutoSlide);
+  carousel.addEventListener('mouseleave', startAutoSlide);
+  carousel.addEventListener('focusin', stopAutoSlide);
+  carousel.addEventListener('focusout', startAutoSlide);
+  startAutoSlide();
 }
 
 const filters = document.querySelector('.gx-filter');
