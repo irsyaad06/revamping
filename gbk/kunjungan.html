@@ -15,7 +15,7 @@
     <div class="site-width site-nav">
       <a class="site-brand" href="../gbk.html" aria-label="Gelora Bung Karno, beranda"><strong>GBK<span>.</span></strong><span>Gelora<br>Bung Karno</span></a>
       <nav aria-label="Navigasi utama"><a href="venue.html">Venue</a><a href="agenda.html">Agenda</a><a href="kunjungan.html" aria-current="page">Kunjungan</a><a href="sejarah.html">Sejarah</a></nav>
-      <a href="https://reservation.gbk.id/" class="gx-action">Reservasi ↗</a>
+      <a href="reservasi.html" class="gx-action">Simulasi reservasi ↗</a>
     </div>
   </header>
   <main id="main">
@@ -23,23 +23,23 @@
     <section class="site-width page-block gx-two">
       <div class="gx-route">
         <p class="eyebrow">Pencari rute</p><h2>Ke venue mana?</h2>
-        <label for="destination">Venue tujuan</label><select id="destination"><option value="Stadion Utama">Stadion Utama</option><option value="Istora Senayan">Istora Senayan</option><option value="Stadion Akuatik">Stadion Akuatik</option><option value="Stadion Madya">Stadion Madya</option><option value="Tennis Center Court">Tennis Center Court</option><option value="Hutan Kota">Hutan Kota</option></select>
+        <label for="destination">Venue tujuan</label><select id="destination"><option value="Stadion Utama" data-pin="stadion-utama">Stadion Utama</option><option value="Istora Senayan" data-pin="istora">Istora Senayan</option><option value="Stadion Akuatik" data-pin="akuatik">Stadion Akuatik</option><option value="Stadion Madya" data-pin="madya">Stadion Madya</option><option value="Tennis Center Court" data-pin="tenis">Tennis Center Court</option><option value="Hutan Kota" data-pin="hutan-kota">Hutan Kota</option></select>
         <label for="travel">Moda perjalanan</label><select id="travel"><option value="transit">Transportasi umum</option><option value="driving">Mobil</option><option value="walking">Jalan kaki</option></select>
-        <a id="route-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Stadion+Utama+GBK&amp;travelmode=transit" class="gx-action">Buka rute di Maps ↗</a>
+        <a id="route-link" href="peta.html" class="gx-action">Tampilkan peta venue ↗</a>
       </div>
       <div class="gx-arrival">
         <h2>Akses kawasan.</h2><p>Gunakan pin venue, bukan sekadar pin kompleks. Cek gerbang dan titik drop-off sesuai acara.</p>
-        <details open><summary>MRT dan TransJakarta</summary><p>Panduan GBK mencantumkan akses dengan MRT dan halte TransJakarta Gelora Bung Karno di Jl. Jenderal Sudirman. Periksa rute dan jadwal operator saat berangkat.</p></details>
-        <details><summary>Mobil, motor, dan drop-off</summary><p>Masuk melalui gerbang yang sesuai dengan venue dan instruksi acara. Gunakan peta resmi dan ikuti pengaturan petugas di lokasi untuk parkir serta drop-off.</p></details>
-        <details><summary>Ring Road dan ketentuan kawasan</summary><p>Periksa tata tertib yang diterbitkan GBK untuk kegiatan di sekitar Stadion Utama.</p><a href="https://gbk.id/Informasi-Umum/22-tata-tertib-ring-road-stadion-utama-gbk" class="gx-text">Buka tata tertib resmi ↗</a></details>
+        <details open><summary>MRT dan TransJakarta</summary><p>Panduan GBK mencantumkan akses dengan MRT dan halte TransJakarta Gelora Bung Karno di Jl. Jenderal Sudirman. Periksa rute dan koneksi angkutan umum sebelum berangkat.</p></details>
+        <details><summary>Mobil, motor, dan drop-off</summary><p>Masuk melalui gerbang yang sesuai dengan venue dan instruksi acara. Pelajari skema venue dan ikuti pengaturan petugas di lokasi untuk parkir serta drop-off.</p></details>
+        <details><summary>Ring Road dan ketentuan kawasan</summary><p>Periksa tata tertib yang diterbitkan GBK untuk kegiatan di sekitar Stadion Utama.</p><a href="informasi.html" class="gx-text">Buka tata tertib kawasan ↗</a></details>
       </div>
     </section>
-    <section class="gx-subtle"><div class="site-width gx-two page-block"><div><h2>Rujukan resmi.</h2><p>Untuk pertanyaan tentang fasilitas atau kunjungan, hubungi <a href="mailto:info@gbk.id" class="gx-text">info@gbk.id</a>.</p></div><div class="gx-rows"><a href="https://gbk.id/petagbk"><span><strong>Peta kawasan GBK</strong><small>Lokasi fasilitas dan orientasi kawasan</small></span><span aria-hidden="true">↗</span></a><a href="https://gbk.id/routetogbk"><span><strong>Rute resmi GBK</strong><small>Panduan kendaraan dan angkutan umum</small></span><span aria-hidden="true">↗</span></a><a href="https://gbk.id/FAQ"><span><strong>Pertanyaan umum</strong><small>Informasi dari pengelola kawasan</small></span><span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="gx-subtle"><div class="site-width gx-two page-block"><div><h2>Panduan kawasan.</h2><p>Baca ringkasan fasilitas dan aturan pada <a href="informasi.html" class="gx-text">pusat informasi</a>.</p></div><div class="gx-rows"><a href="peta.html">Tampilkan peta venue ↗</a><a href="informasi.html"><span><strong>Pertanyaan umum</strong><small>Panduan pengunjung dan ketentuan kawasan</small></span><span aria-hidden="true">↗</span></a></div></div></section>
   </main>
   <footer class="site-footer">
     <div class="site-width">
       <a class="site-brand" href="../gbk.html"><strong>GBK<span>.</span></strong><span>Gelora<br>Bung Karno</span></a>
-      <nav aria-label="Navigasi studi"><a href="../index.html">Kajian revamp</a><a href="../jcc.html">Konsep JCC ↗</a><a href="https://gbk.id/">Situs resmi ↗</a></nav>
+      <nav aria-label="Navigasi studi"><a href="../index.html">Kajian revamp</a><a href="../jcc.html">Konsep JCC ↗</a><a href="informasi.html">Pusat informasi</a></nav>
     </div>
   </footer>
 </body>

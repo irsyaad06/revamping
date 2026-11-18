@@ -44,13 +44,37 @@ const destination = document.querySelector('#destination');
 if (destination) {
   const travel = document.querySelector('#travel');
   const route = document.querySelector('#route-link');
+  const guidance = {
+    transit: 'Cek akses dari stasiun MRT atau halte. Lanjutkan ke titik venue pada skema kawasan.',
+    driving: 'Cocokkan gerbang kendaraan dan titik drop-off dengan informasi penyelenggara.',
+    walking: 'Gunakan jalur pejalan kaki dan ikuti petunjuk petugas pada hari acara.',
+  };
+  const note = document.createElement('p');
+  note.className = 'note';
+  note.setAttribute('role', 'status');
+  route.after(note);
   function updateRoute() {
-    const params = new URLSearchParams({
-      api: '1',
-      destination: `${destination.value} GBK`,
-      travelmode: travel.value,
-    });
-    route.href = `https://www.google.com/maps/dir/?${params}`;
+    const option = destination.selectedOptions[0];
+    route.href = 'peta.html#' + option.dataset.pin;
+    note.textContent = destination.value + '. ' + guidance[travel.value];
   }
   for (const field of [destination, travel]) field.addEventListener('change', updateRoute);
+  updateRoute();
+}
+
+const booking = document.querySelector('[data-demo-booking]');
+if (booking) {
+  const venue = document.querySelector('#book-venue');
+  const date = document.querySelector('#book-date');
+  const slot = document.querySelector('#book-slot');
+  const result = document.querySelector('#booking-result');
+  const requested = new URLSearchParams(location.search).get('venue');
+  if ([...venue.options].some(option => option.value === requested)) venue.value = requested;
+  booking.querySelector('button').disabled = false;
+  booking.addEventListener('input', () => { result.textContent = ''; });
+  booking.addEventListener('submit', event => {
+    event.preventDefault();
+    const when = new Date(date.value + 'T00:00:00').toLocaleDateString('id-ID', { dateStyle: 'long' });
+    result.textContent = `Simulasi · ${venue.selectedOptions[0].textContent} · ${when} · ${slot.value} WIB. Belum ada pemesanan nyata.`;
+  });
 }

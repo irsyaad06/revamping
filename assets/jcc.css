@@ -167,3 +167,26 @@ form .note { color: #efdcdd; margin: 0; }
 }
 @media(prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } * { transition: none !important; } }
 .site-nav .section-current { color: var(--gold); box-shadow: inset 0 -1px var(--gold); }
+/* JCC uses a concierge directory beside the content on wide screens. */
+@media(min-width:1050px) {
+  .desk { display:grid; grid-template-columns:226px minmax(0,1fr); }
+  .desk .site-mast { grid-column:1; grid-row:1/3; position:sticky; top:0; align-self:start; height:100vh; overflow:auto; border-right:1px solid #5c404a; }
+  .desk main,.desk .site-footer { grid-column:2; min-width:0; }
+  .desk .site-mast .site-width { width:auto; margin-inline:24px; align-items:start; flex-direction:column; }
+  .desk .site-utility .site-width { padding-block:18px; }
+  .desk .site-nav { padding-top:30px; gap:33px; }
+  .desk .site-nav .site-brand { font-size:2rem; }
+  .desk .site-nav nav { width:100%; display:grid; gap:0; }
+  .desk .site-nav nav a { width:100%; padding-block:10px; border-bottom:1px solid #563741; }
+}
+.doc-index,.plan-layout {margin-bottom:clamp(42px,7vw,86px);}
+.doc-index a {display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding:13px 0;}
+.doc-index a span {font:400 clamp(1.55rem,3vw,2.6rem)/1.1 var(--serif);}
+.doc-index small {color:var(--bronze);}
+.plan-layout {display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(16px,4vw,48px);align-items:center;}
+.plan-layout p {margin:12px 0;}
+.plan-layout .jx-under {margin-top:10px;}
+.blueprint {background:#ebdfcc;border:1px solid #9d8064;padding:6%;display:grid;grid-template-rows:.7fr 2fr .7fr;gap:9px;min-height:340px;}
+.blueprint div {display:grid;place-items:center;text-align:center;border:1px dashed #896349;background:#fff9ef99;padding:8px;}
+.blueprint div:nth-child(2) {background:repeating-linear-gradient(90deg,#f3e6d7 0 18px,#ebdbc4 19px 20px);}
+@media(max-width:640px) {.plan-layout{grid-template-columns:1fr;}}
