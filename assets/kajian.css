@@ -11,3 +11,20 @@ h1,h2{line-height:.98;letter-spacing:-.057em}h1{font-size:clamp(3rem,7vw,7.3rem)
 .table-scroll{overflow:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:680px;background:#fff;text-align:left;font-size:.87rem}th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}thead,.total{background:#ece4f9}.score{display:inline-grid;place-items:center;width:28px;height:28px;color:white;background:#6241a1;border-radius:7px}.score.alt{background:#0d6e64}.architecture{margin-top:22px}.roadmap{border-top:1px solid var(--line)}details{margin-top:18px;border-block:1px solid var(--line);padding:12px 0}summary{cursor:pointer;font-weight:750}footer{background:#211738;color:white;padding:22px 0;font-size:.86rem}
 @media(max-width:690px){.wrap{width:calc(100% - 30px)}.journeys,.bench-grid{grid-template-columns:1fr}.project{min-height:170px}.project div{padding:9px}.project span{font-size:.73rem}.metrics{gap:5px}.metrics div{padding:8px}.bar-row{grid-template-columns:95px 1fr 40px}.flow{gap:8px}.flow li:not(:last-child)::after{right:-7px}.flow li{padding:5px}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}}
+
+.project .project-click {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #1d4ed8;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 750;
+}
+.project:hover .project-click,
+.project:focus-visible .project-click {
+  background: #1e40af;
+}
