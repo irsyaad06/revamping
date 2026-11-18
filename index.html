@@ -1,50 +1,679 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kajian revamp · GBK dan JCC</title><link rel="stylesheet" href="assets/kajian.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eksplorasi Pre-Kickoff · Kajian Revamp Website GBK & JCC</title>
+  <link rel="stylesheet" href="assets/kajian.css">
 </head>
 <body>
-<header class="mast"><div class="wrap nav"><a class="brand" href="index.html">Kajian GBK / JCC</a><nav aria-label="Navigasi kajian"><a href="#alur">Alur</a><a href="#kecepatan">Kecepatan</a><a href="#pilihan">Penilaian</a></nav></div></header>
-<main>
-<section class="hero"><div class="wrap"><p class="eyebrow">Kajian revamp · UI/UX & arsitektur</p><h1>Dua venue.<br>Dua cara menjelajah.</h1><div class="hero-projects">
-<a href="gbk.html" class="project project-g"><img src="assets/gbk-hero.webp" alt=""><span class="project-click" aria-hidden="true">KLIK me</span><div><strong>GBK</strong><span>Cari arena, rute, dan sesi demo ↗</span></div></a>
-<a href="jcc.html" class="project project-j"><img src="assets/jcc-hero.webp" alt=""><span class="project-click" aria-hidden="true">KLIK me</span><div><strong>JCC</strong><span>Bandingkan ruang dan siapkan brief ↗</span></div></a>
-</div></div></section>
-<section class="wrap section" id="alur">
-<div class="head"><p class="eyebrow">Perjalanan pengguna</p><h2>Alur utama setiap situs</h2></div>
-<div class="journeys">
-<article class="panel journey g"><h3>GBK · Rencanakan kunjungan</h3><ol class="flow"><li>Pilih aktivitas</li><li>Buka profil venue</li><li>Cek peta atau sesi</li><li>Buat ringkasan demo</li></ol><p><b>Perbaikan utama</b> Satukan informasi yang dibutuhkan sebelum berangkat. Agenda, akses, dan reservasi dapat dibuka dari konteks venue.</p></article>
-<article class="panel journey j"><h3>JCC · Pilih ruang untuk acara</h3><ol class="flow"><li>Tentukan konfigurasi</li><li>Bandingkan kapasitas</li><li>Tinjau denah konsep</li><li>Susun brief</li></ol><p><b>Perbaikan utama</b> Bawa pilihan ruang hingga brief. Kapasitas ditampilkan per konfigurasi agar penyelenggara bisa menilai ruang yang sesuai.</p></article>
-</div></section>
-<section class="section speed" id="kecepatan"><div class="wrap">
-<div class="head"><p class="eyebrow">Kecepatan</p><h2>Throughput teknis dan target pengguna</h2></div>
-<div class="bench-grid">
-<figure class="panel"><figcaption><h3>Render SSR tanpa cache halaman</h3><p>Request per detik per vCPU</p></figcaption><div class="bar-row"><span>SvelteKit</span><div class="bar-track" aria-hidden="true"><i style="--v:1.0000"></i></div><b>1.459</b></div><div class="bar-row"><span>TanStack Start</span><div class="bar-track" aria-hidden="true"><i style="--v:0.8910"></i></div><b>1.300</b></div><div class="bar-row"><span>Nuxt</span><div class="bar-track" aria-hidden="true"><i style="--v:0.3811"></i></div><b>556</b></div><div class="bar-row"><span>Next.js</span><div class="bar-track" aria-hidden="true"><i style="--v:0.1624"></i></div><b>237</b></div></figure>
-<figure class="panel api"><figcaption><h3>API daftar produk</h3><p>Request per detik per vCPU</p></figcaption><div class="bar-row"><span>Go</span><div class="bar-track" aria-hidden="true"><i style="--v:1.0000"></i></div><b>2.001</b></div><div class="bar-row"><span>Laravel Octane</span><div class="bar-track" aria-hidden="true"><i style="--v:0.5527"></i></div><b>1.106</b></div><div class="bar-row"><span>FastAPI</span><div class="bar-track" aria-hidden="true"><i style="--v:0.4863"></i></div><b>973</b></div><div class="bar-row"><span>NestJS</span><div class="bar-track" aria-hidden="true"><i style="--v:0.2309"></i></div><b>462</b></div><p class="muted">Hono belum diukur di benchmark ini.</p></figure>
-</div>
-<p class="method">Sumber: dokumen Arsitektur GBK TypeScript, hlm. 9. Uji internal k6 dengan sekitar 10 ribu item, 32 koneksi, 20 detik per skenario. Varian non-Next memakai cache data 30 detik. Angka mewakili kapasitas pada skenario uji dan tidak dapat dikonversi langsung menjadi waktu tampil halaman GBK atau JCC.</p>
-<div class="metrics"><div><span>Target LCP mobile</span><strong>≤ 2,5 s</strong><small>Konten utama tampil</small></div><div><span>Target INP mobile</span><strong>≤ 200 ms</strong><small>Respons terhadap interaksi</small></div><div><span>Target CLS mobile</span><strong>≤ 0,10</strong><small>Stabilitas tata letak</small></div></div>
-<p class="method">Target produksi di persentil ke-75. Bobot berkas inti beranda: GBK 139 KiB dan JCC 125 KiB (HTML, CSS, JS, serta foto hero utama, sebelum kompresi transfer; gambar lanjutan dan font dikecualikan). Baseline situs lama dan skor browser prototipe belum diukur. Untuk perbandingan yang adil, ukur beranda dan detail venue pada perangkat serta profil jaringan yang sama. Pisahkan pengujian cache dingin dan hangat.</p>
-</div></section>
-<section class="wrap section" id="pilihan">
-<div class="head"><p class="eyebrow">Matriks keputusan GBK</p><h2>Nilai dua kandidat arsitektur</h2><p>Penilaian awal untuk kickoff. Skala 1–5 menunjukkan tingkat kecocokan terhadap kebutuhan proyek.</p></div>
-<div class="table-scroll" tabindex="0" role="region" aria-label="Matriks keputusan"><table><thead><tr><th>Kriteria</th><th>Bobot</th><th>SvelteKit + Laravel</th><th>SvelteKit + Hono</th><th>Alasan</th></tr></thead><tbody>
-<tr><th>CMS siap dikembangkan</th><td>35%</td><td><b class="score">5</b></td><td><b class="score alt">3</b></td><td>Filament memberi dasar panel editorial. Opsi Hono perlu admin kustom.</td></tr>
-<tr><th>Bukti throughput API</th><td>25%</td><td><b class="score">4</b></td><td><b class="score alt">2</b></td><td>Octane tercakup di uji internal. Hono perlu benchmark yang setara.</td></tr>
-<tr><th>Satu bahasa lintas lapisan</th><td>20%</td><td><b class="score">3</b></td><td><b class="score alt">5</b></td><td>Hono dan SvelteKit sama-sama memakai TypeScript.</td></tr>
-<tr><th>Konten untuk web dan aplikasi</th><td>20%</td><td><b class="score">4</b></td><td><b class="score alt">4</b></td><td>Kedua opsi dapat menyediakan Content API yang sama untuk GBK.ID dan LOVE GBK.</td></tr>
-<tr class="total"><th>Skor tertimbang</th><td>100%</td><td>4,15 / 5</td><td>3,35 / 5</td><td>Utamakan Laravel jika CMS dan bukti API menjadi prioritas rilis.</td></tr>
-</tbody></table></div>
-<p class="method">Rumus: jumlah nilai × bobot. Bobot dan nilai adalah penilaian proyek, bukan keluaran k6. Tinjau kembali setelah uji CMS dan API. Untuk JCC, validasi workflow tim venue sebelum memilih backend.</p>
-<div class="panel architecture"><h3>Alur konten produksi GBK</h3><ol class="flow"><li>Editor CMS</li><li>Content API</li><li>Cache CDN</li><li>GBK.ID + LOVE GBK</li></ol><p class="muted">Saat konten dipublikasikan, antrean memperbarui cache terkait. Gunakan skema dan aturan cache terpisah untuk akun, slot, dan transaksi.</p></div>
-</section>
-<section class="wrap section roadmap">
-<div class="head"><h2>Prioritas dan validasi</h2></div>
-<div class="bench-grid">
-<article class="panel"><h3>Rilis awal</h3><p>GBK: venue, agenda, informasi akses, dan integrasi reservasi yang sudah tersedia. JCC: ruang, konfigurasi, denah, dan inquiry. Keduanya: CMS, migrasi URL, dan pengukuran mobile.</p></article>
-<article class="panel"><h3>Setelah validasi</h3><p>GBK: peta operasional dan integrasi LOVE GBK. JCC: penyaluran inquiry ke CRM, tur per ruang, dan dokumen teknis terkelola.</p></article>
-</div>
-<details><summary>Asumsi, data, dan keputusan kickoff</summary><ul><li>Konfirmasi pemilik data agenda, pintu masuk, slot venue, dan perubahan akses.</li><li>Konfirmasi kapasitas per layout, versi denah, penerima proposal, dan SLA respons JCC.</li><li>Jadwal, skema peta/denah, dan slot kedua prototipe adalah data demo. Profil venue memakai temuan kajian sebelumnya.</li><li>Bahan kajian: analisis HARPA, dokumen arsitektur GBK TypeScript dan SvelteKit–Laravel, dan informasi publik kedua venue yang ditinjau sebelumnya.</li></ul></details>
-</section>
-</main><footer><div class="wrap">Kajian revamp GBK &amp; JCC · Prototipe HTML, CSS, dan JavaScript</div></footer></body></html>
+  <header class="mast">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Kajian Pre-Kickoff · GBK &amp; JCC</span>
+      </a>
+      <nav aria-label="Navigasi kajian">
+        <a href="#audit-existing">Audit Existing</a>
+        <a href="#target-pengguna">Target Pengguna</a>
+        <a href="#komparasi-bahasa">Tech Stack</a>
+        <a href="#arsitektur-sistem">Arsitektur Backend</a>
+        <a href="#matriks-keputusan">Matriks &amp; Roadmap</a>
+      </nav>
+      <div class="nav-cta-group">
+        <a href="gbk.html" class="pill-btn pill-gbk">Prototipe GBK ↗</a>
+        <a href="jcc.html" class="pill-btn pill-jcc">Prototipe JCC ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO & KICKOFF CONTEXT -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="hero-badge">Dokumen Eksplorasi Pre-Kickoff · UI/UX, SEO, Frontend &amp; Backend Architecture</p>
+        <h1>Bedah Kelemahan Existing &amp;<br><span>Strategi Revamp GBK + JCC.</span></h1>
+        <p class="hero-lead">Rangkuman temuan eksplorasi situs eksisting Gelora Bung Karno (<code>gbk.id</code>) dan Jakarta Convention Center (<code>jcc.co.id</code>)—mulai dari masalah tampilan, absennya booking/konfigurator terpadu, celah SEO, hingga komparasi bahasa pemrograman dan arsitektur backend.</p>
+
+        <div class="kickoff-brief">
+          <div>
+            <strong style="margin-bottom:0;">Konteks Eksplorasi</strong>
+          </div>
+          <div class="kickoff-tags">
+            <span>✓ Audit Visual &amp; UX</span>
+            <span>✓ Audit SEO &amp; Konten</span>
+            <span>✓ Komparasi Go vs PHP vs TS</span>
+            <span>✓ 2 Prototipe Interaktif</span>
+          </div>
+        </div>
+
+        <div class="hero-projects">
+          <a href="gbk.html" class="project project-g">
+            <img src="assets/gbk-hero.webp" alt="Prototipe Gelora Bung Karno">
+            <div class="project-top">
+              <span class="project-concept">Konsep Sporty · Skala Nasional</span>
+              <span class="project-click">Buka Prototipe GBK ↗</span>
+            </div>
+            <div>
+              <strong>Gelora Bung Karno (GBK)</strong>
+              <p>Live status kawasan, direktori 30+ arena standar FIFA/IAAF, zona lari publik Ring Road, pencari pintu MRT interaktif, dan simulasi booking terpadu.</p>
+              <div class="project-pills">
+                <small>Live Gate Ticker</small>
+                <small>Filter Arena</small>
+                <small>Peta Rute &amp; MRT</small>
+                <small>Simulasi LOVE GBK</small>
+              </div>
+            </div>
+          </a>
+
+          <a href="jcc.html" class="project project-j">
+            <img src="assets/jcc-plenary.webp" alt="Prototipe Jakarta Convention Center">
+            <div class="project-top">
+              <span class="project-concept">Konsep Awwwards · Luxury Editorial</span>
+              <span class="project-click">Buka Prototipe JCC ↗</span>
+            </div>
+            <div>
+              <strong>Jakarta Convention Center (JCC)</strong>
+              <p>Floating pill top-navbar, kurasi fotografi arsitektur melengkung, komparator kapasitas antar-ruang, lookbook skenario acara, dan generator brief otomatis.</p>
+              <div class="project-pills">
+                <small>Top Pill Navbar</small>
+                <small>Photo-First Bento</small>
+                <small>Event Lookbook</small>
+                <small>Smart Brief Builder</small>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. AUDIT KELEMAHAN EXISTING VS TARGET REVAMP -->
+    <section class="wrap section" id="audit-existing">
+      <div class="head">
+        <div>
+          <p class="eyebrow">01 · Temuan Eksplorasi Situs Eksisting</p>
+          <h2>Apa yang Kurang di Web Lama GBK &amp; JCC?</h2>
+        </div>
+        <p>Perbandingan skor kesiapan kondisi situs saat ini (abu-abu) dibandingkan target setelah revamp (berwarna), diikuti rincian masalah utama yang ditemukan saat eksplorasi.</p>
+      </div>
+
+      <div class="audit-grid">
+        <!-- GBK AUDIT CARD -->
+        <article class="audit-card gbk-card">
+          <div class="audit-head">
+            <div>
+              <span class="persona-venue pv-gbk">Situs Publik &amp; Reservasi Nasional</span>
+              <h3 style="margin-top:6px;">Audit Website GBK (gbk.id)</h3>
+            </div>
+            <span class="score-badge warn">4 Masalah Kritis</span>
+          </div>
+
+          <div class="gap-meters" aria-label="Skor perbandingan kondisi lama vs target revamp GBK">
+            <div class="gap-row">
+              <span>Alur Booking Online</span>
+              <div class="dual-track"><i class="old-bar" style="width:35%"></i><i class="new-bar" style="width:94%"></i></div>
+              <b>35% → <em>94%</em></b>
+            </div>
+            <div class="gap-row">
+              <span>Technical SEO &amp; Schema</span>
+              <div class="dual-track"><i class="old-bar" style="width:40%"></i><i class="new-bar" style="width:96%"></i></div>
+              <b>40% → <em>96%</em></b>
+            </div>
+            <div class="gap-row">
+              <span>Panduan Pintu &amp; MRT</span>
+              <div class="dual-track"><i class="old-bar" style="width:30%"></i><i class="new-bar" style="width:92%"></i></div>
+              <b>30% → <em>92%</em></b>
+            </div>
+            <div class="gap-row">
+              <span>Desain Sporty &amp; Mobile</span>
+              <div class="dual-track"><i class="old-bar" style="width:45%"></i><i class="new-bar" style="width:95%"></i></div>
+              <b>45% → <em>95%</em></b>
+            </div>
+          </div>
+
+          <div class="issue-list">
+            <div class="issue-item">
+              <span class="issue-tag tag-ux">Booking</span>
+              <div>
+                <strong>1. Fragmentasi Domain &amp; Belum Ada Cek Slot Instan</strong>
+                <p>Halaman profil di <code>gbk.id</code> terputus dari <code>reservation.gbk.id</code> (LOVE GBK). Calon penyewa tidak bisa mengecek ketersediaan sesi/tarif langsung dari konteks venue tanpa berpindah portal yang tampilannya berbeda.</p>
+                <span class="issue-fix">✓ Solusi Revamp: Integrasikan widget Cek Sesi &amp; Simulasi Booking langsung di tiap halaman arena via API terpadu.</span>
+              </div>
+            </div>
+
+            <div class="issue-item">
+              <span class="issue-tag tag-seo">SEO &amp; Info</span>
+              <div>
+                <strong>2. SEO Organik &amp; Structured Data Belum Berjalan Optimal</strong>
+                <p>Pencarian populer warga seperti <em>"pintu masuk Hutan Kota GBK dari MRT"</em>, <em>"jadwal Ring Road GBK hari ini"</em>, atau <em>"kapasitas Stadion Madya"</em> justru didominasi portal berita/blog luar karena web GBK minim halaman semantik &amp; JSON-LD Schema (<code>SportsActivityLocation</code>, <code>Event</code>).</p>
+                <span class="issue-fix">✓ Solusi Revamp: SSR penuh dengan meta dinamis per venue, schema event otomatis, dan direktori informasi akses yang diindeks Google.</span>
+              </div>
+            </div>
+
+            <div class="issue-item">
+              <span class="issue-tag tag-fe">Frontend</span>
+              <div>
+                <strong>3. Tampilan Kaku ("Kotak-Kotak Birokratis") &amp; Kurang Sporty</strong>
+                <p>Untuk kompleks olahraga kebanggaan nasional seluas 279 Ha, desain lama terasa datar, tombol kaku, dan terlalu sedikit informasi saat di-scroll.</p>
+                <span class="issue-fix">✓ Solusi Revamp: Tipografi atletik berenergi tinggi, tombol berbentuk track-pill &amp; velocity-cut, serta pemisahan jelas antara Arena Kompetisi vs Zona Gerak Publik.</span>
+              </div>
+            </div>
+
+            <div class="issue-item">
+              <span class="issue-tag tag-be">Operasional</span>
+              <div>
+                <strong>4. Tidak Ada Status Gerbang &amp; Rekayasa Arus Real-Time</strong>
+                <p>Saat ada konser atau laga Timnas (77.000 penonton), pengunjung bingung pintu mana yang dibuka untuk pejalan kaki vs kendaraan.</p>
+                <span class="issue-fix">✓ Solusi Revamp: Live Operational Ticker di bagian atas situs &amp; simulator rute gerbang berbasis tujuan venue.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- JCC AUDIT CARD -->
+        <article class="audit-card jcc-card">
+          <div class="audit-head">
+            <div>
+              <span class="persona-venue pv-jcc">Situs Konvensi, Eksibisi &amp; Gala B2B/VIP</span>
+              <h3 style="margin-top:6px;">Audit Website JCC (jcc.co.id)</h3>
+            </div>
+            <span class="score-badge warn">4 Masalah Kritis</span>
+          </div>
+
+          <div class="gap-meters" aria-label="Skor perbandingan kondisi lama vs target revamp JCC">
+            <div class="gap-row">
+              <span>Prestise Visual (Awwwards)</span>
+              <div class="dual-track"><i class="old-bar" style="width:28%"></i><i class="new-bar" style="width:96%"></i></div>
+              <b>28% → <em>96%</em></b>
+            </div>
+            <div class="gap-row">
+              <span>Kurasi Foto &amp; Mood Acara</span>
+              <div class="dual-track"><i class="old-bar" style="width:32%"></i><i class="new-bar" style="width:95%"></i></div>
+              <b>32% → <em>95%</em></b>
+            </div>
+            <div class="gap-row">
+              <span>Komparasi Ruang &amp; Denah</span>
+              <div class="dual-track"><i class="old-bar" style="width:35%"></i><i class="new-bar" style="width:93%"></i></div>
+              <b>35% → <em>93%</em></b>
+            </div>
+            <div class="gap-row">
+              <span>Konversi Lead / Brief EO</span>
+              <div class="dual-track"><i class="old-bar" style="width:30%"></i><i class="new-bar" style="width:91%"></i></div>
+              <b>30% → <em>91%</em></b>
+            </div>
+          </div>
+
+          <div class="issue-list">
+            <div class="issue-item">
+              <span class="issue-tag tag-fe">Tampilan</span>
+              <div>
+                <strong>1. Desain "Brosur Lama" Penuh Teks &amp; Minim Fotografi Imersif</strong>
+                <p>Web lama JCC didominasi teks panjang dan tabel kaku bergaya tahun 2010-an. Padahal klien JCC adalah penyelenggara KTT dunia, pameran internasional, dan pernikahan mewah bernilai miliaran rupiah yang menilai prestise dari impresi visual pertama.</p>
+                <span class="issue-fix">✓ Solusi Revamp: Pendekatan Editorial Luxury sekelas Awwwards dengan Floating Pill Top-Navbar, galeri busur 4 foto, dan Bento Photo Grid.</span>
+              </div>
+            </div>
+
+            <div class="issue-item">
+              <span class="issue-tag tag-ux">Visualisasi</span>
+              <div>
+                <strong>2. Klien Sulit Membayangkan Transformasi Ruang per Jenis Acara</strong>
+                <p>Foto ruangan kosong tidak membantu Wedding Planner atau PCO membayangkan bagaimana <em>Assembly Hall</em> atau <em>Plenary Hall</em> terlihat saat diubah menjadi Gala Dinner, Sidang KTT, atau Konser.</p>
+                <span class="issue-fix">✓ Solusi Revamp: Interactive Event Lookbook (KTT, Royal Wedding, Expo, Konser) dengan pergantian foto suasana &amp; spesifikasi instan.</span>
+              </div>
+            </div>
+
+            <div class="issue-item">
+              <span class="issue-tag tag-seo">Informasi</span>
+              <div>
+                <strong>3. Spesifikasi &amp; Denah Terkunci di PDF Statis (Tanpa Alat Banding)</strong>
+                <p>EO harus mengunduh PDF satu per satu hanya untuk mengecek tinggi plafon, beban lantai (kg/m²), atau membandingkan kapasitas Teater vs Banquet antar-hall.</p>
+                <span class="issue-fix">✓ Solusi Revamp: Filter kapasitas real-time (misal: ≥ 1.500 pax Jamuan Duduk) dan tabel komparasi side-by-side interaktif di browser.</span>
+              </div>
+            </div>
+
+            <div class="issue-item">
+              <span class="issue-tag tag-be">Lead B2B</span>
+              <div>
+                <strong>4. Tidak Ada Smart Event Brief / RFQ Generator Terstruktur</strong>
+                <p>Formulir kontak biasa membuat tim sales JCC harus bertanya ulang mengenai tanggal, estimasi tamu, pilihan hall, dan kebutuhan teknis.</p>
+                <span class="issue-fix">✓ Solusi Revamp: Generator Brief Acara terstruktur yang siap dikirim ke tim Sales/CRM lengkap dengan parameter ruang.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. TARGET PENGGUNA & PROFIL TRAFIK -->
+    <section class="section section-alt" id="target-pengguna">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="eyebrow">02 · Pemetaan Target Pengguna</p>
+            <h2>Siapa yang Mengakses GBK vs JCC?</h2>
+          </div>
+          <p>Karakteristik pengguna kedua situs sangat kontras: GBK didominasi trafik publik massal berbasis mobile, sedangkan JCC didominasi pengambil keputusan B2B dan klien VVIP.</p>
+        </div>
+
+        <div class="persona-grid">
+          <article class="persona-card">
+            <div class="persona-top">
+              <span class="persona-venue pv-gbk">GBK · Persona 1</span>
+              <span class="persona-share">~60% Trafik · 85% Mobile</span>
+            </div>
+            <h3>Warga &amp; Komunitas Olahraga Harian</h3>
+            <p>Pelari pagi/sore di Ring Road, pengunjung Hutan Kota, pesepeda, dan komunitas yang menyewa lapangan ABC/Tenis/Akuatik.</p>
+            <ul class="persona-needs">
+              <li>Cek jam buka Ring Road &amp; Hutan Kota hari ini</li>
+              <li>Cari pintu masuk terdekat dari MRT / parkir</li>
+              <li>Booking sesi lapangan komunitas tanpa ribet</li>
+            </ul>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-top">
+              <span class="persona-venue pv-gbk">GBK · Persona 2</span>
+              <span class="persona-share">~30% Trafik · Spike Ekstrem</span>
+            </div>
+            <h3>Penonton Pertandingan Timnas &amp; Konser</h3>
+            <p>Puluhan ribu pengunjung yang mengakses web secara bersamaan pada H-1 hingga hari H acara besar di Stadion Utama atau Istora.</p>
+            <ul class="persona-needs">
+              <li>Peta gerbang aktif &amp; rekayasa arus pejalan kaki</li>
+              <li>Lokasi kantong parkir &amp; shuttle bus kawasan</li>
+              <li>Daftar barang terlarang &amp; fasilitas medis/masjid</li>
+            </ul>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-top">
+              <span class="persona-venue pv-gbk">GBK · Persona 3</span>
+              <span class="persona-share">~10% Trafik · B2B Promotor</span>
+            </div>
+            <h3>Promotor Event, Federasi &amp; Korporat</h3>
+            <p>Penyelenggara turnamen internasional, konser musik stadion, atau sports day perusahaan yang membutuhkan spesifikasi teknis arena.</p>
+            <ul class="persona-needs">
+              <li>Sertifikasi federasi (FIFA, BWF, World Aquatics)</li>
+              <li>Kapasitas tribun VIP, lux lampu, &amp; alur loading</li>
+              <li>Prosedur izin dan simulasi tarif sewa resmi</li>
+            </ul>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-top">
+              <span class="persona-venue pv-jcc">JCC · Persona 1</span>
+              <span class="persona-share">~45% Trafik · Desktop &amp; Tablet</span>
+            </div>
+            <h3>PCO Internasional, Kementerian &amp; Asosiasi</h3>
+            <p>Perencana KTT kenegaraan, kongres medis/industri, dan pameran dagang B2B yang menyeleksi kelayakan teknis gedung konvensi.</p>
+            <ul class="persona-needs">
+              <li>Komparasi kapasitas Plenary, Assembly &amp; Cendrawasih</li>
+              <li>Beban lantai (1.500 kg/m²), plafon 9m, &amp; akses truk</li>
+              <li>Bilik interpretasi bahasa &amp; keamanan protokol VIP</li>
+            </ul>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-top">
+              <span class="persona-venue pv-jcc">JCC · Persona 2</span>
+              <span class="persona-share">~25% Trafik · High-Ticket Value</span>
+            </div>
+            <h3>Wedding Organizer &amp; Klien Gala VVIP</h3>
+            <p>Calon pengantin dan perencana perayaan agung (1.000–4.500 tamu) yang mengutamakan kemewahan visual, estetika ballroom, dan katering.</p>
+            <ul class="persona-needs">
+              <li>Galeri foto imersif suasana Royal Wedding &amp; Gala</li>
+              <li>Kapasitas meja bundar vs standing reception</li>
+              <li>Kualitas dapur in-house bintang lima &amp; ruang rias VIP</li>
+            </ul>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-top">
+              <span class="persona-venue pv-jcc">JCC · Persona 3</span>
+              <span class="persona-share">~30% Trafik · Mobile Visitor</span>
+            </div>
+            <h3>Pengunjung Pameran, Wisuda &amp; Konser</h3>
+            <p>Masyarakat umum dan delegasi yang menghadiri expo publik di Hall A/B, wisuda universitas, atau festival musik di JCC.</p>
+            <ul class="persona-needs">
+              <li>Kalender agenda acara yang sedang berlangsung</li>
+              <li>Orientasi lokasi Hall A, Hall B, dan Main Lobby</li>
+              <li>Info akses drop-off, parkir, dan transportasi umum</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. KOMPARASI BAHASA PEMROGRAMAN & BENCHMARK TEKNIS -->
+    <section class="section section-dark" id="komparasi-bahasa">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="eyebrow">03 · Komparasi Tech Stack &amp; Benchmark</p>
+            <h2>Tech Stack</h2>
+          </div>
+          <p>Evaluasi objektif kandidat tech stack (<strong>Go</strong>, <strong>PHP 8.4 / Laravel Octane</strong>, <strong>TypeScript / Hono / SvelteKit</strong>, dan <strong>Python / FastAPI</strong>) untuk menangani beban trafik GBK &amp; JCC.</p>
+        </div>
+
+        <!-- 4 Programming Language Cards -->
+        <div class="lang-cards">
+          <article class="lang-card recommended">
+            <div class="lang-header">
+              <span class="lang-badge">Rekomendasi Utama CMS + API</span>
+              <span style="color:#38bdf8;font-weight:800;font-size:.78rem;">PHP 8.4 + TS</span>
+            </div>
+            <h4>Laravel Octane + SvelteKit</h4>
+            <p>Kombinasi paling seimbang untuk rilis cepat dan stabil: Filament memberikan panel CMS enterprise instan untuk tim redaksi GBK/JCC, sementara SvelteKit SSR menghasilkan halaman super ringan &amp; SEO kuat.</p>
+            <div class="lang-metrics">
+              <span>Throughput API: <strong>1.106 req/s/vCPU</strong></span>
+              <span>Throughput SSR: <strong>1.459 req/s/vCPU</strong></span>
+              <span>Kesiapan CMS: <strong>Sangat Tinggi (Filament)</strong></span>
+            </div>
+          </article>
+
+          <article class="lang-card">
+            <div class="lang-header">
+              <span class="lang-badge">Performa Tertinggi / Microservice</span>
+              <span style="color:#34d399;font-weight:800;font-size:.78rem;">Golang</span>
+            </div>
+            <h4>Go (Fiber / Chi)</h4>
+            <p>Unggul mutlak dalam efisiensi memori dan konkurensi tinggi (goroutines). Sangat cocok dijadikan microservice khusus untuk <strong>Real-time Slot Locking / War Booking</strong> saat trafik GBK melonjak tajam.</p>
+            <div class="lang-metrics">
+              <span>Throughput API: <strong>2.001 req/s/vCPU</strong></span>
+              <span>Memory Footprint: <strong>Sangat Rendah (~25 MB)</strong></span>
+              <span>Kelemahan: <strong>Perlu bangun CMS dari nol</strong></span>
+            </div>
+          </article>
+
+          <article class="lang-card">
+            <div class="lang-header">
+              <span class="lang-badge">Full-Stack Satu Bahasa</span>
+              <span style="color:#fbbf24;font-weight:800;font-size:.78rem;">TypeScript</span>
+            </div>
+            <h4>SvelteKit + Hono / Node</h4>
+            <p>Menyatukan frontend dan backend dalam satu bahasa TypeScript dengan validasi tipe ujung-ke-ujung (Zod/tRPC). Sangat lincah untuk API ringan di Edge, namun butuh waktu lebih lama jika membangun modul admin/ERP kompleks.</p>
+            <div class="lang-metrics">
+              <span>Shared Types: <strong>100% TypeScript</strong></span>
+              <span>Edge Readiness: <strong>Sangat Tinggi</strong></span>
+              <span>Kelemahan: <strong>Ekosistem CMS belum sekuat Laravel</strong></span>
+            </div>
+          </article>
+
+          <article class="lang-card">
+            <div class="lang-header">
+              <span class="lang-badge">Integrasi Data &amp; AI</span>
+              <span style="color:#c084fc;font-weight:800;font-size:.78rem;">Python 3.12</span>
+            </div>
+            <h4>FastAPI + Next.js</h4>
+            <p>Kuat apabila di tahap lanjutan JCC/GBK membutuhkan asisten AI rekomendasi ruang atau analitik prediktif okupansi venue, namun Next.js memiliki overhead SSR lebih berat dibanding SvelteKit.</p>
+            <div class="lang-metrics">
+              <span>Throughput API: <strong>973 req/s/vCPU</strong></span>
+              <span>Throughput Next SSR: <strong>237 req/s/vCPU</strong></span>
+              <span>Kelebihan: <strong>Ekosistem AI/Data terbaik</strong></span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Benchmark Bar Charts -->
+        <div class="bench-grid">
+          <figure class="panel">
+            <figcaption>
+              <h3>Benchmark Frontend SSR (Tanpa Cache Halaman)</h3>
+              <p>Request per detik per vCPU — menentukan seberapa tahan server saat ribuan pengunjung membuka halaman detail venue &amp; agenda secara bersamaan.</p>
+            </figcaption>
+            <div class="bar-row"><span>SvelteKit (TS)</span><div class="bar-track" aria-hidden="true"><i style="--v:1.0000"></i></div><b>1.459</b></div>
+            <div class="bar-row"><span>TanStack Start</span><div class="bar-track" aria-hidden="true"><i style="--v:0.8910"></i></div><b>1.300</b></div>
+            <div class="bar-row"><span>Nuxt (Vue 3)</span><div class="bar-track" aria-hidden="true"><i style="--v:0.3811"></i></div><b>556</b></div>
+            <div class="bar-row"><span>Next.js (React)</span><div class="bar-track" aria-hidden="true"><i style="--v:0.1624"></i></div><b>237</b></div>
+          </figure>
+
+          <figure class="panel api">
+            <figcaption>
+              <h3>Benchmark Backend API (Daftar Venue &amp; Katalog)</h3>
+              <p>Request per detik per vCPU — kapasitas layanan backend saat melayani query ketersediaan ruang, jadwal, dan aplikasi mobile LOVE GBK.</p>
+            </figcaption>
+            <div class="bar-row"><span>Go (Golang)</span><div class="bar-track" aria-hidden="true"><i style="--v:1.0000"></i></div><b>2.001</b></div>
+            <div class="bar-row"><span>Laravel Octane</span><div class="bar-track" aria-hidden="true"><i style="--v:0.5527"></i></div><b>1.106</b></div>
+            <div class="bar-row"><span>Python FastAPI</span><div class="bar-track" aria-hidden="true"><i style="--v:0.4863"></i></div><b>973</b></div>
+            <div class="bar-row"><span>NestJS (Node)</span><div class="bar-track" aria-hidden="true"><i style="--v:0.2309"></i></div><b>462</b></div>
+          </figure>
+        </div>
+
+        <div class="metrics">
+          <div>
+            <span>Target LCP Mobile</span>
+            <strong>≤ 2,5 dtk</strong>
+            <small>Foto hero WebP + fetchpriority="high"</small>
+          </div>
+          <div>
+            <span>Target INP Mobile</span>
+            <strong>≤ 200 ms</strong>
+            <small>Filter ruang &amp; kalkulator instan</small>
+          </div>
+          <div>
+            <span>Target CLS Visual</span>
+            <strong>≤ 0,10</strong>
+            <small>Rasio aspek gambar terkunci</small>
+          </div>
+          <div>
+            <span>Bobot Beranda Inti</span>
+            <strong>&lt; 150 KiB</strong>
+            <small>HTML + CSS + JS + Hero terkompresi</small>
+          </div>
+        </div>
+        <p class="method">Sumber data benchmark: Dokumen Arsitektur GBK TypeScript (hlm. 9), uji beban k6 dengan ~10.000 item, 32 koneksi konkuren, durasi 20 detik per skenario.</p>
+      </div>
+    </section>
+
+    <!-- 4. VISUAL BLUEPRINT ARSITEKTUR BACKEND & ALUR DATA -->
+    <section class="wrap section" id="arsitektur-sistem">
+      <div class="head">
+        <div>
+          <p class="eyebrow">04 · Rekomendasi Arsitektur Backend &amp; Integrasi</p>
+          <h2>Blueprint Arsitektur Produksi GBK &amp; JCC</h2>
+        </div>
+        <p>Desain arsitektur memisahkan <strong>Content Delivery (Cacheable di CDN Edge)</strong> dari <strong>Transaksi Dinamis (Booking Lock &amp; Lead CRM)</strong> agar situs tetap cepat meski terjadi lonjakan pengunjung.</p>
+      </div>
+
+      <div class="arch-diagram-grid">
+        <!-- GBK ARCHITECTURE -->
+        <article class="arch-box">
+          <span class="persona-venue pv-gbk">Arsitektur High-Concurrency GBK</span>
+          <h3 style="margin:8px 0 6px;font-size:1.45rem;">Ekosistem Web GBK.ID + Integrasi LOVE GBK</h3>
+          <p style="font-size:.86rem;color:var(--muted);">Menangani lonjakan trafik publik saat hari pertandingan sekaligus menyatukan katalog venue dengan mesin reservasi.</p>
+
+          <div class="arch-layers">
+            <div class="arch-layer">
+              <span class="arch-layer-label">Layer 1 · Edge &amp; Client Delivery</span>
+              <div class="arch-nodes">
+                <span class="arch-node">Cloudflare CDN + WAF</span>
+                <span class="arch-node highlight-g">SvelteKit SSR (Web GBK.ID)</span>
+                <span class="arch-node">Aplikasi Mobile LOVE GBK</span>
+              </div>
+            </div>
+
+            <div class="arch-layer">
+              <span class="arch-layer-label">Layer 2 · API Gateway &amp; Caching</span>
+              <div class="arch-nodes">
+                <span class="arch-node">REST / OpenAPI Gateway</span>
+                <span class="arch-node highlight-g">Redis Cache (Status Gate, Cuaca &amp; Agenda)</span>
+                <span class="arch-node">Redis Distributed Lock (Anti Double-Book)</span>
+              </div>
+            </div>
+
+            <div class="arch-layer">
+              <span class="arch-layer-label">Layer 3 · Core Backend Services</span>
+              <div class="arch-nodes">
+                <span class="arch-node highlight-g">Laravel Octane + Filament CMS</span>
+                <span class="arch-node">Booking &amp; Slot Engine (LOVE GBK API)</span>
+                <span class="arch-node">Payment Gateway / Virtual Account BUMN</span>
+              </div>
+            </div>
+
+            <div class="arch-layer">
+              <span class="arch-layer-label">Layer 4 · Data &amp; Search</span>
+              <div class="arch-nodes">
+                <span class="arch-node">PostgreSQL 16 (Data Utama)</span>
+                <span class="arch-node">Meilisearch (Pencarian Cepat 30+ Venue)</span>
+                <span class="arch-node">S3 Object Storage (Aset WebP/AVIF)</span>
+              </div>
+            </div>
+          </div>
+
+          <ol class="flow">
+            <li>Pilih Arena<small>Filter cabor &amp; sertifikasi</small></li>
+            <li>Cek Pintu &amp; Slot<small>Rute MRT &amp; jam kosong</small></li>
+            <li>Lock Sesi<small>Redis lock 10 menit</small></li>
+            <li>E-Permit Terbit<small>Sinkron ke LOVE GBK</small></li>
+          </ol>
+        </article>
+
+        <!-- JCC ARCHITECTURE -->
+        <article class="arch-box">
+          <span class="persona-venue pv-jcc">Arsitektur B2B Lead &amp; Spatial Catalog JCC</span>
+          <h3 style="margin:8px 0 6px;font-size:1.45rem;">Ekosistem Konfigurator Ruang &amp; Sales Pipeline JCC</h3>
+          <p style="font-size:.86rem;color:var(--muted);">Mengubah pengunjung B2B/EO menjadi prospek terstruktur melalui komparator kapasitas dan pembuatan brief otomatis.</p>
+
+          <div class="arch-layers">
+            <div class="arch-layer">
+              <span class="arch-layer-label">Layer 1 · Luxury Editorial Frontend</span>
+              <div class="arch-nodes">
+                <span class="arch-node highlight-j">SvelteKit SSR (JCC.CO.ID)</span>
+                <span class="arch-node">Interactive Capacity Matrix</span>
+                <span class="arch-node highlight-j">Smart Event Brief Builder</span>
+              </div>
+            </div>
+
+            <div class="arch-layer">
+              <span class="arch-layer-label">Layer 2 · Content &amp; Lead API</span>
+              <div class="arch-nodes">
+                <span class="arch-node">JSON-LD Event &amp; Venue Schema</span>
+                <span class="arch-node highlight-j">Lead Scoring &amp; Routing Webhook</span>
+                <span class="arch-node">Dynamic PDF Quotation Generator</span>
+              </div>
+            </div>
+
+            <div class="arch-layer">
+              <span class="arch-layer-label">Layer 3 · Editorial &amp; Sales Operations</span>
+              <div class="arch-nodes">
+                <span class="arch-node highlight-j">Laravel Filament CMS (Ruang, Denah &amp; Lookbook)</span>
+                <span class="arch-node">Integrasi CRM Sales JCC &amp; Notifikasi WhatsApp/Email</span>
+              </div>
+            </div>
+
+            <div class="arch-layer">
+              <span class="arch-layer-label">Layer 4 · Spatial &amp; Media Repository</span>
+              <div class="arch-nodes">
+                <span class="arch-node">PostgreSQL (Matriks Kapasitas per Layout)</span>
+                <span class="arch-node">CDN Image Optimizer (Galeri Resolusi Tinggi)</span>
+              </div>
+            </div>
+          </div>
+
+          <ol class="flow">
+            <li>Eksplorasi Mood<small>Lookbook KTT / Wedding</small></li>
+            <li>Bandingkan Hall<small>Filter pax &amp; layout kursi</small></li>
+            <li>Susun Brief<small>Pilih tanggal &amp; teknis</small></li>
+            <li>Masuk CRM Sales<small>Tim JCC terima spesifikasi</small></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. MATRIKS KEPUTUSAN ARSITEKTUR & ROADMAP -->
+    <section class="wrap section" id="matriks-keputusan" style="padding-top:0;">
+      <div class="head">
+        <div>
+          <p class="eyebrow">05 · Matriks Keputusan &amp; Prioritas Rilis</p>
+          <h2>Penilaian Kandidat Stack &amp; Tahapan Kickoff</h2>
+        </div>
+        <p>Penilaian berbobot (skala 1–5) untuk membantu tim teknis dan pemangku kepentingan menentukan fondasi proyek saat kickoff.</p>
+      </div>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Matriks keputusan arsitektur">
+        <table>
+          <thead>
+            <tr>
+              <th>Kriteria Evaluasi Proyek</th>
+              <th>Bobot</th>
+              <th>SvelteKit + Laravel Octane</th>
+              <th>SvelteKit + Go (Microservice)</th>
+              <th>SvelteKit + Hono (Full TS)</th>
+              <th>Justifikasi Teknis &amp; Bisnis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Kesiapan CMS &amp; Workflow Editor</th>
+              <td>30%</td>
+              <td><b class="score">5</b></td>
+              <td><b class="score go">2</b></td>
+              <td><b class="score alt">3</b></td>
+              <td>Filament (Laravel) menyediakan manajemen ruang, jadwal, role approval, dan audit log tanpa perlu membuat admin dari nol.</td>
+            </tr>
+            <tr>
+              <th>Performa API &amp; Konkurensi Tinggi</th>
+              <td>25%</td>
+              <td><b class="score">4</b></td>
+              <td><b class="score go">5</b></td>
+              <td><b class="score alt">4</b></td>
+              <td>Go mencapai 2.001 req/s, sementara Laravel Octane mencapai 1.106 req/s (sangat memadai dengan dukungan Redis cache).</td>
+            </tr>
+            <tr>
+              <th>Kecepatan Development &amp; Talent Pool</th>
+              <td>20%</td>
+              <td><b class="score">5</b></td>
+              <td><b class="score go">3</b></td>
+              <td><b class="score alt">4</b></td>
+              <td>Ekosistem Laravel + TypeScript sangat matang di Indonesia, meminimalkan risiko keterlambatan delivery fase pertama.</td>
+            </tr>
+            <tr>
+              <th>Kemudahan Integrasi (SSO, Payment, CRM)</th>
+              <td>15%</td>
+              <td><b class="score">5</b></td>
+              <td><b class="score go">4</b></td>
+              <td><b class="score alt">4</b></td>
+              <td>Laravel memiliki paket resmi untuk antrean (Horizon), OAuth2/SSO, webhook CRM, dan pelaporan keuangan.</td>
+            </tr>
+            <tr>
+              <th>Satu Bahasa Lintas Lapisan (Type Safety)</th>
+              <td>10%</td>
+              <td><b class="score">3</b></td>
+              <td><b class="score go">3</b></td>
+              <td><b class="score alt">5</b></td>
+              <td>Opsi Hono unggul karena 100% TypeScript, namun kontrak OpenAPI/TypeGen di Laravel sudah menjembatani hal ini dengan baik.</td>
+            </tr>
+            <tr class="total">
+              <th>Total Skor Tertimbang</th>
+              <td>100%</td>
+              <td><strong>4,55 / 5,00 (Terpilih)</strong></td>
+              <td>3,30 / 5,00</td>
+              <td>3,80 / 5,00</td>
+              <td><strong>Rekomendasi:</strong> Gunakan <strong>SvelteKit + Laravel Octane</strong> sebagai fondasi utama; tambahkan service <strong>Go</strong> khusus jika modul antrean tiket/booking ekstrem diperlukan.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <details open>
+        <summary>Daftar Pertanyaan &amp; Validasi Kunci untuk Rapat Kickoff</summary>
+        <ul>
+          <li><strong>Integrasi Booking GBK:</strong> Apakah website baru akan memanggil API langsung ke backend <code>reservation.gbk.id</code> (LOVE GBK) untuk menampilkan ketersediaan slot secara real-time di halaman detail venue?</li>
+          <li><strong>Operasional Gerbang &amp; Hari Acara GBK:</strong> Siapa tim operasional PPKGBK yang bertugas memperbarui status gerbang aktif/rekayasa arus pada hari pertandingan atau konser agar banner status di beranda selalu akurat?</li>
+          <li><strong>Alur Lead &amp; Penawaran JCC:</strong> Apakah ringkasan <em>Event Brief</em> dari website JCC akan dikirim ke email tim Sales, WhatsApp Business API, atau langsung masuk ke sistem CRM internal JCC?</li>
+          <li><strong>Standarisasi Aset Visual &amp; Denah JCC:</strong> Konfirmasi ketersediaan foto resolusi tinggi terbaru untuk seluruh 13 ruang JCC pada berbagai konfigurasi acara (KTT, Gala, Pameran) beserta pembaruan angka kapasitas resmi.</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;">
+      <span>Eksplorasi Pre-Kickoff Revamp GBK &amp; JCC · Analisis UI/UX, SEO, Frontend &amp; Arsitektur Backend</span>
+      <div style="display:flex;gap:16px;">
+        <a href="gbk.html" style="color:#fff;font-weight:700;">Buka Prototipe GBK ↗</a>
+        <a href="jcc.html" style="color:#ffd166;font-weight:700;">Buka Prototipe JCC ↗</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -3,47 +3,596 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Gelora Bung Karno — Prototipe revamp Gelora Bung Karno.">
-  <title>Gelora Bung Karno | Gelora Bung Karno</title>
+  <meta name="description" content="Gelora Bung Karno — Kompleks Olahraga Kebanggaan Nasional, Ruang Terbuka Publik, dan Arena Kelas Dunia di Senayan, Jakarta.">
+  <title>Gelora Bung Karno · Senayan Jakarta | Kompleks Olahraga & Ruang Publik Nasional</title>
   <link rel="stylesheet" href="assets/gbk.css">
   <script defer src="assets/gbk.js"></script>
 </head>
 <body class="gbkx home">
   <a class="skip" href="#main">Langsung ke konten</a>
+
+  <div class="gx-ticker" role="region" aria-label="Status operasional kawasan">
+    <div class="site-width gx-ticker-inner">
+      <div class="gx-ticker-items">
+        <span class="gx-live-pill">Kawasan Buka · 05.00–22.00 WIB</span>
+        <span class="gx-ticker-stat">Ring Road SUGBK: <strong>Sesi Publik Pagi & Sore</strong></span>
+        <span class="gx-ticker-stat">Kualitas Udara Hutan Kota: <strong>Baik (AQI 42 · 28°C)</strong></span>
+        <span class="gx-ticker-stat">Gerbang Aktif: <strong>Pintu 5, 6, 7, 10 & 12</strong></span>
+      </div>
+      <a href="gbk/informasi.html" style="color:var(--gold-sport);font-weight:700;">Panduan & Tata Tertib Kawasan ↗</a>
+    </div>
+  </div>
+
   <header class="site-mast">
-    <div class="site-utility"><div class="site-width"><a href="index.html">← Kajian revamp</a><span>Prototipe desain · Foto ilustratif</span></div></div>
+    <div class="site-utility">
+      <div class="site-width">
+        <a href="index.html">← Kembali ke Kajian Revamp UI/UX</a>
+        <span>Pusat Pengelolaan Kompleks Gelora Bung Karno (PPKGBK) · Prototipe Skala Nasional</span>
+      </div>
+    </div>
     <div class="site-width site-nav">
-      <a class="site-brand" href="gbk.html" aria-label="Gelora Bung Karno, beranda"><strong>GBK<span>.</span></strong><span>Gelora<br>Bung Karno</span></a>
-      <nav aria-label="Navigasi utama"><a href="gbk/venue.html">Venue</a><a href="gbk/agenda.html">Agenda</a><a href="gbk/kunjungan.html">Kunjungan</a><a href="gbk/sejarah.html">Sejarah</a></nav>
-      <a href="gbk/reservasi.html" class="gx-action">Simulasi reservasi ↗</a>
+      <a class="site-brand" href="gbk.html" aria-label="Gelora Bung Karno, beranda">
+        <strong>GBK<span>.</span></strong>
+        <span>Gelora<br>Bung Karno</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <a href="gbk/venue.html">Direktori Arena</a>
+        <a href="#zona-publik">Zona Publik</a>
+        <a href="gbk/agenda.html">Agenda Nasional</a>
+        <a href="gbk/kunjungan.html">Akses & Peta</a>
+        <a href="gbk/sejarah.html">Warisan 1962</a>
+      </nav>
+      <a href="gbk/reservasi.html" class="gx-action">Booking Arena ↗</a>
     </div>
   </header>
-  <main id="main">
 
+  <main id="main">
+    <!-- 1. HERO SHOWCASE -->
     <section class="gx-hero" aria-labelledby="gbk-title">
       <div class="gx-hero-inner site-width">
-        <div class="gx-title"><p class="eyebrow">Senayan · Jakarta</p><h1 id="gbk-title">Jakarta<br>bergerak<span>.</span></h1><p>Cari arena untuk berolahraga, cek agenda, atau rencanakan kunjungan ke Gelora Bung Karno.</p><a href="gbk/venue.html" class="gx-action">Jelajahi venue ↗</a></div>
-        <div class="gx-slides" data-carousel aria-label="Sorotan venue"><figure data-slide ><img src="assets/gbk-hero.webp" alt="Ilustrasi Stadion Utama" fetchpriority="high"><figcaption><a href="gbk/stadion-utama.html">Stadion Utama ↗</a></figcaption></figure><figure data-slide hidden><img src="assets/gbk-indoor.webp" alt="Ilustrasi Istora Senayan" loading="lazy"><figcaption><a href="gbk/istora.html">Istora Senayan ↗</a></figcaption></figure><figure data-slide hidden><img src="assets/gbk-aquatic.webp" alt="Ilustrasi Stadion Akuatik" loading="lazy"><figcaption><a href="gbk/akuatik.html">Stadion Akuatik ↗</a></figcaption></figure><div class="gx-slide-controls" role="group" aria-label="Pilih sorotan venue"><button type="button" aria-pressed="true" data-frame="0">Sepak Bola</button><button type="button" aria-pressed="false" data-frame="1">Olahraga indoor</button><button type="button" aria-pressed="false" data-frame="2">Olahraga air</button></div></div>
+        <div class="gx-title">
+          <p class="eyebrow eyebrow-badge">Senayan · Jakarta Pusat · Sejak 1962</p>
+          <h1 id="gbk-title">Jakarta<br>bergerak<span>.</span></h1>
+          <p>Jantung olahraga, rekreasi hijau, dan perhelatan akbar Indonesia. Jelajahi 30+ arena berstandar Olimpiade, berlari di Ring Road, atau rencanakan acara berskala nasional.</p>
+          <div class="gx-hero-cta">
+            <a href="gbk/venue.html" class="gx-action">Jelajahi 30+ Arena ↗</a>
+            <a href="gbk/reservasi.html" class="gx-cut">Simulasi Booking ↗</a>
+            <a href="#rute-pintar" class="gx-outline">Peta & MRT ↓</a>
+          </div>
+          <div class="gx-hero-stats" aria-label="Statistik utama kawasan GBK">
+            <div><strong>279 Ha</strong><small>Kawasan Terpadu</small></div>
+            <div><strong>77.193</strong><small>Kapasitas SUGBK</small></div>
+            <div><strong>30+</strong><small>Venue Standar Dunia</small></div>
+            <div><strong>4,5 Ha</strong><small>Hutan Kota Hijau</small></div>
+          </div>
+        </div>
+
+        <div class="gx-slides" data-carousel aria-label="Sorotan venue utama GBK">
+          <figure data-slide>
+            <img src="assets/gbk-hero.webp" alt="Panorama udara Stadion Utama Gelora Bung Karno saat matahari terbenam" fetchpriority="high">
+            <figcaption>
+              <div class="gx-slide-meta">
+                <small>FIFA · AFC · World Athletics</small>
+                <strong>Stadion Utama GBK</strong>
+              </div>
+              <a href="gbk/stadion-utama.html">Profil Arena ↗</a>
+            </figcaption>
+          </figure>
+          <figure data-slide hidden>
+            <img src="assets/gbk-indoor.webp" alt="Interior Istora Senayan saat pertandingan olahraga" fetchpriority="low" loading="lazy">
+            <figcaption>
+              <div class="gx-slide-meta">
+                <small>BWF Super 1000 · FIBA Arena</small>
+                <strong>Istora Senayan</strong>
+              </div>
+              <a href="gbk/istora.html">Profil Arena ↗</a>
+            </figcaption>
+          </figure>
+          <figure data-slide hidden>
+            <img src="assets/gbk-aquatic.webp" alt="Kolam Olimpiade di Stadion Akuatik GBK" fetchpriority="low" loading="lazy">
+            <figcaption>
+              <div class="gx-slide-meta">
+                <small>World Aquatics · 4 Kolam</small>
+                <strong>Stadion Akuatik</strong>
+              </div>
+              <a href="gbk/akuatik.html">Profil Arena ↗</a>
+            </figcaption>
+          </figure>
+          <figure data-slide hidden>
+            <img src="assets/gbk-hutankota.webp" alt="Hutan Kota GBK dengan latar gedung pencakar langit Jakarta" fetchpriority="low" loading="lazy">
+            <figcaption>
+              <div class="gx-slide-meta">
+                <small>Paru-Paru Hijau · Ruang Publik</small>
+                <strong>Hutan Kota GBK</strong>
+              </div>
+              <a href="gbk/hutan-kota.html">Profil Kawasan ↗</a>
+            </figcaption>
+          </figure>
+          <div class="gx-slide-controls" role="group" aria-label="Pilih sorotan venue">
+            <button type="button" aria-pressed="true" data-frame="0">Stadion Utama</button>
+            <button type="button" aria-pressed="false" data-frame="1">Istora Indoor</button>
+            <button type="button" aria-pressed="false" data-frame="2">Akuatik</button>
+            <button type="button" aria-pressed="false" data-frame="3">Hutan Kota</button>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- 2. QUICK SHORTCUT CARDS -->
     <nav class="gx-quick site-width" aria-label="Pintasan kunjungan">
-      <a href="gbk/venue.html"><strong>Cari arena</strong><small>Olahraga dan ruang terbuka</small><span aria-hidden="true">↗</span></a>
-      <a href="gbk/agenda.html"><strong>Cek agenda</strong><small>Acara dan pengumuman GBK</small><span aria-hidden="true">↗</span></a>
-      <a href="gbk/kunjungan.html"><strong>Menuju GBK</strong><small>Transportasi, peta, dan akses</small><span aria-hidden="true">↗</span></a>
+      <a href="gbk/venue.html">
+        <strong>Cari Arena</strong>
+        <small>30+ stadion, hall indoor & lapangan</small>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a href="gbk/agenda.html">
+        <strong>Cek Agenda</strong>
+        <small>Pertandingan Timnas, turnamen & konser</small>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a href="gbk/kunjungan.html">
+        <strong>Pintu & MRT</strong>
+        <small>Rute gerbang, parkir & transportasi</small>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a href="gbk/reservasi.html">
+        <strong>Sesi & Tarif</strong>
+        <small>Simulasi sewa komunitas & event</small>
+        <span aria-hidden="true">↗</span>
+      </a>
     </nav>
-    <section class="site-width page-block"><div class="gx-section-head"><h2>Pilih arena.</h2><a href="gbk/venue.html" class="gx-text">Lihat semua venue ↗</a></div><div class="gx-grid"><a class="gx-tile" href="gbk/stadion-utama.html" data-sport="atletik">
-      <div class="gx-tile-photo"><img src="assets/gbk-venue.webp" alt="" loading="lazy"></div>
-      <div class="gx-tile-copy"><small>Sepak bola · Stadion</small><strong>Stadion Utama</strong><span aria-hidden="true">↗</span></div></a><a class="gx-tile" href="gbk/istora.html" data-sport="indoor">
-      <div class="gx-tile-photo"><img src="assets/gbk-indoor.webp" alt="" loading="lazy"></div>
-      <div class="gx-tile-copy"><small>Bulu tangkis · Basket · Voli</small><strong>Istora Senayan</strong><span aria-hidden="true">↗</span></div></a><a class="gx-tile" href="gbk/akuatik.html" data-sport="renang">
-      <div class="gx-tile-photo"><img src="assets/gbk-aquatic.webp" alt="" loading="lazy"></div>
-      <div class="gx-tile-copy"><small>Renang · Olahraga air</small><strong>Stadion Akuatik</strong><span aria-hidden="true">↗</span></div></a></div></section>
-    <section class="gx-feature"><div class="site-width"><div><p class="eyebrow">Sejarah kawasan</p><h2>Dari 1962<br>ke hari ini.</h2><p>Kompleks ini dibangun untuk Asian Games IV. Kenali bagaimana kawasan olahraga Senayan tumbuh dari ajang tersebut.</p><a href="gbk/sejarah.html" class="gx-outline">Baca sejarah GBK ↗</a></div><div class="track-art" aria-hidden="true"></div></div></section>
+
+    <!-- 3. EXPANDED VENUE DIRECTORY WITH FILTER -->
+    <section class="site-width page-block" id="arena">
+      <div class="gx-section-head">
+        <div>
+          <p class="eyebrow" style="color:var(--deep-red);">Standar Federasi Internasional</p>
+          <h2>Pilih Arena Kebanggaan.</h2>
+          <p class="lead-sub">Filter arena berdasarkan cabang olahraga atau aktivitas publik. Setiap venue dilengkapi spesifikasi kapasitas, sertifikasi federasi, dan akses pintu terdekat.</p>
+        </div>
+        <a href="gbk/venue.html" class="gx-action">Buka Direktori Lengkap ↗</a>
+      </div>
+
+      <div class="gx-filter" role="group" aria-label="Filter kategori arena di beranda">
+        <button type="button" value="all" aria-pressed="true">Semua Arena (6)</button>
+        <button type="button" value="atletik" aria-pressed="false">Sepak Bola & Atletik</button>
+        <button type="button" value="indoor" aria-pressed="false">Olahraga Indoor</button>
+        <button type="button" value="renang" aria-pressed="false">Akuatik & Renang</button>
+        <button type="button" value="tenis" aria-pressed="false">Tenis & Raket</button>
+        <button type="button" value="taman" aria-pressed="false">Taman & Lari Publik</button>
+      </div>
+      <p id="gbk-result" class="note" aria-live="polite" hidden>6 venue ditampilkan</p>
+
+      <div class="gx-grid gx-grid-featured">
+        <a class="gx-tile" href="gbk/stadion-utama.html" data-sport="atletik">
+          <div class="gx-tile-photo"><img src="assets/gbk-venue.webp" alt="Stadion Utama Gelora Bung Karno" loading="lazy"></div>
+          <div class="gx-tile-top">
+            <span class="gx-badge">FIFA · AFC · IAAF</span>
+            <span class="gx-cap">77.193 Kursi</span>
+          </div>
+          <div class="gx-tile-copy">
+            <small>Sepak Bola · Atletik · Konser Akbar</small>
+            <strong>Stadion Utama GBK</strong>
+            <p class="gx-tile-meta">Ikon arsitektur Atap Temu Gelang dengan kursi single-seat dan pencahayaan 3.500 lux.</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <a class="gx-tile" href="gbk/istora.html" data-sport="indoor">
+          <div class="gx-tile-photo"><img src="assets/gbk-indoor.webp" alt="Istora Senayan" loading="lazy"></div>
+          <div class="gx-tile-top">
+            <span class="gx-badge">BWF · FIBA · FIVB</span>
+            <span class="gx-cap">7.166 Kursi</span>
+          </div>
+          <div class="gx-tile-copy">
+            <small>Bulu Tangkis · Basket · Pertunjukan Indoor</small>
+            <strong>Istora Senayan</strong>
+            <p class="gx-tile-meta">Arena indoor legendaris rumah Indonesia Open dengan akustik gemuruh yang mendunia.</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <a class="gx-tile" href="gbk/akuatik.html" data-sport="renang">
+          <div class="gx-tile-photo"><img src="assets/gbk-aquatic.webp" alt="Stadion Akuatik GBK" loading="lazy"></div>
+          <div class="gx-tile-top">
+            <span class="gx-badge">World Aquatics</span>
+            <span class="gx-cap">7.800 Kursi</span>
+          </div>
+          <div class="gx-tile-copy">
+            <small>Renang · Loncat Indah · Polo Air</small>
+            <strong>Stadion Akuatik</strong>
+            <p class="gx-tile-meta">Empat kolam berstandar Olimpiade dengan atap gelombang ikonik dan sesi latihan publik.</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <a class="gx-tile" href="gbk/madya.html" data-sport="atletik">
+          <div class="gx-tile-photo"><img src="assets/gbk-track.webp" alt="Lintasan lari Stadion Madya GBK" loading="lazy"></div>
+          <div class="gx-tile-top">
+            <span class="gx-badge">World Athletics Class 2</span>
+            <span class="gx-cap">9.170 Kursi</span>
+          </div>
+          <div class="gx-tile-copy">
+            <small>Atletik · Pemusatan Latihan · Liga</small>
+            <strong>Stadion Madya</strong>
+            <p class="gx-tile-meta">Lintasan tartan 8 lajur dan lapangan rumput alami untuk kejuaraan atletik & latihan timnas.</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <a class="gx-tile" href="gbk/tenis.html" data-sport="tenis">
+          <div class="gx-tile-photo"><div class="court-mark court-tenis" aria-hidden="true"><i></i></div></div>
+          <div class="gx-tile-top">
+            <span class="gx-badge">ITF Hard Court</span>
+            <span class="gx-cap">3.800 Kursi</span>
+          </div>
+          <div class="gx-tile-copy">
+            <small>Tenis · Turnamen · Sesi Komunitas</small>
+            <strong>Tennis Center Court</strong>
+            <p class="gx-tile-meta">Stadion tenis terbuka dan indoor dengan permukaan Cushion Acrylic berstandar tur dunia.</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <a class="gx-tile" href="gbk/hutan-kota.html" data-sport="taman">
+          <div class="gx-tile-photo"><img src="assets/gbk-hutankota.webp" alt="Hutan Kota GBK" loading="lazy"></div>
+          <div class="gx-tile-top">
+            <span class="gx-badge">Ruang Terbuka Hijau</span>
+            <span class="gx-cap">4,5 Hektare</span>
+          </div>
+          <div class="gx-tile-copy">
+            <small>Rekreasi · Jogging Track · Piknik</small>
+            <strong>Hutan Kota GBK</strong>
+            <p class="gx-tile-meta">Hamparan rumput hijau, kolam trembesi, dan panorama pencakar langit Sudirman–SCBD.</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4. ZONA GERAK PUBLIK & KOMUNITAS -->
+    <section class="gx-public-zones page-block" id="zona-publik">
+      <div class="site-width">
+        <div class="gx-section-head">
+          <div>
+            <p class="eyebrow">Ruang Publik Inklusif · Buka Setiap Hari</p>
+            <h2>Olahraga Tanpa Batas untuk Warga.</h2>
+            <p class="lead-sub">Selain arena kejuaraan, GBK menyediakan jalur lari bebas kendaraan, taman kota, dan fasilitas kebugaran komunitas yang dikelola berstandar internasional.</p>
+          </div>
+          <a href="gbk/informasi.html" class="gx-cut">Panduan Pengunjung ↗</a>
+        </div>
+
+        <div class="gx-zone-grid">
+          <div class="gx-zone-cards">
+            <article class="gx-zone-card">
+              <div>
+                <span class="gx-zone-tag">Favorit Pelari · Bebas Emisi</span>
+                <h3 style="margin-top:10px;">Ring Road Stadion Utama</h3>
+                <p>Lintasan memutar tepat di bawah megahnya struktur Atap Temu Gelang SUGBK. Permukaan rata, terang benderang di malam hari, dan steril dari kendaraan bermotor.</p>
+              </div>
+              <div class="gx-zone-stat">
+                <span>Jarak: 1,0 km / putaran</span>
+                <a href="gbk/stadion-utama.html" style="color:#fff;text-decoration:underline;">Detail Ring Road ↗</a>
+              </div>
+            </article>
+
+            <article class="gx-zone-card">
+              <div>
+                <span class="gx-zone-tag">Long Run & Bersepeda</span>
+                <h3 style="margin-top:10px;">Jalur Lingkar Luar GBK</h3>
+                <p>Rute boulevard rindang yang menghubungkan zona Akuatik, Istora, Madya, dan Plaza Timur. Ideal untuk latihan pace 5K/10K dan komunitas sepeda pagi.</p>
+              </div>
+              <div class="gx-zone-stat">
+                <span>Jarak: 3,5 km / putaran</span>
+                <a href="gbk/event-lari.html" style="color:#fff;text-decoration:underline;">Rute Lari Pagi ↗</a>
+              </div>
+            </article>
+
+            <article class="gx-zone-card">
+              <div>
+                <span class="gx-zone-tag">Ekologi & Rekreasi</span>
+                <h3 style="margin-top:10px;">Hutan Kota & Taman Anggrek</h3>
+                <p>Kawasan konservasi hijau seluas 4,5 hektare dengan jalur pedestrian kayu, amphitheater rumput, serta area santai keluarga di pagi dan sore hari.</p>
+              </div>
+              <div class="gx-zone-stat">
+                <span>Sesi: 06.00–10.00 & 15.00–18.00</span>
+                <a href="gbk/hutan-kota.html" style="color:#fff;text-decoration:underline;">Aturan Taman ↗</a>
+              </div>
+            </article>
+
+            <article class="gx-zone-card">
+              <div>
+                <span class="gx-zone-tag">Komunitas & Lapangan</span>
+                <h3 style="margin-top:10px;">Lapangan ABC, Rugby & Gateball</h3>
+                <p>Puluhan lapangan rumput sintetis, basket outdoor, softball, panahan, dan bulu tangkis yang dapat dipesan oleh klub, sekolah, maupun komunitas warga.</p>
+              </div>
+              <div class="gx-zone-stat">
+                <span>Akses: Reservasi LOVE GBK</span>
+                <a href="gbk/reservasi.html" style="color:#fff;text-decoration:underline;">Cek Sesi ↗</a>
+              </div>
+            </article>
+          </div>
+
+          <aside class="gx-crowd-panel" aria-label="Simulasi jam ideal kunjungan publik">
+            <div>
+              <p class="eyebrow">Rekomendasi Waktu Kunjungan</p>
+              <h3 style="margin:6px 0 12px;">Cek Ritme Harian Kawasan.</h3>
+              <p style="font-size:.86rem;color:#e5cdd2;margin-bottom:14px;">Pilih waktu kedatangan untuk melihat kepadatan rata-rata, fasilitas yang beroperasi, dan pintu masuk yang disarankan:</p>
+              <div class="gx-time-tabs" role="group" aria-label="Pilih sesi waktu kunjungan">
+                <button type="button" data-time-slot="pagi" aria-pressed="true">Pagi (05.30–09.30)</button>
+                <button type="button" data-time-slot="siang" aria-pressed="false">Siang (10.00–15.00)</button>
+                <button type="button" data-time-slot="sore" aria-pressed="false">Sore/Malam (16.00–21.30)</button>
+              </div>
+            </div>
+
+            <div class="gx-crowd-detail" id="crowd-output" aria-live="polite">
+              <strong>Sesi Pagi · Udara Segar & Komunitas Lari</strong>
+              <p>Waktu terbaik untuk long run di Jalur Lingkar 3,5 km, bersepeda, dan piknik pagi di Hutan Kota. Masuk melalui Pintu 5 (MRT Istora) atau Pintu 10.</p>
+            </div>
+
+            <div>
+              <p style="font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--gold-sport);margin-bottom:8px;">Fasilitas Penunjang Pengunjung:</p>
+              <div class="gx-facility-pills">
+                <span>✓ Water Refill Station</span>
+                <span>✓ Loker & Shower Room</span>
+                <span>✓ Pos Medis & AED</span>
+                <span>✓ Jalur Kursi Roda</span>
+                <span>✓ Masjid Al-Bina</span>
+                <span>✓ Kantong Parkir Terpadu</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. AGENDA & KALENDER ACARA NASIONAL -->
+    <section class="site-width page-block" id="agenda-sorotan">
+      <div class="gx-section-head">
+        <div>
+          <p class="eyebrow" style="color:var(--deep-red);">Kalender Kawasan & Turnamen</p>
+          <h2>Sorotan Agenda GBK.</h2>
+          <p class="lead-sub">Pantau jadwal pertandingan internasional, sesi olahraga komunitas, hingga konser musik agar kunjungan dan pemilihan pintu masuk Anda tetap lancar.</p>
+        </div>
+        <div class="actions">
+          <a href="gbk/jadwal.html" class="gx-text">Kalender Lengkap ↗</a>
+          <a href="gbk/agenda.html" class="gx-action">Panduan Hari Acara ↗</a>
+        </div>
+      </div>
+
+      <div class="gx-agenda-grid">
+        <article class="gx-event-spotlight">
+          <img src="assets/gbk-hero.webp" alt="Suasana pertandingan akbar di Stadion Utama GBK" loading="lazy">
+          <div class="gx-event-spotlight-body">
+            <span class="gx-badge" style="background:var(--red);color:#fff;border:0;">Sorotan Utama · Stadion Utama GBK</span>
+            <h3>Laga Kandang Nasional & Festival Olahraga Senayan</h3>
+            <p>Pada hari pertandingan besar di Stadion Utama, rekayasa arus pejalan kaki diterapkan di Pintu 5, Pintu 6, dan Pintu 10. Pengunjung disarankan menggunakan MRT Jakarta atau TransJakarta.</p>
+            <div class="actions">
+              <a href="gbk/stadion-utama.html" class="gx-cut">Skema Akses Stadion ↗</a>
+              <a href="gbk/kunjungan.html" class="gx-outline" style="color:#fff;">Panduan Transportasi ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="gx-event-list" aria-label="Daftar agenda terdekat">
+          <a class="gx-event-card" href="gbk/event-lari.html">
+            <div class="gx-date-badge"><strong>21</strong><small>Jun</small></div>
+            <div class="gx-event-info">
+              <small>Komunitas & Publik · Ring Road</small>
+              <strong>Lari Pagi Kawasan & Sesi Pemanasan Bersama</strong>
+              <span>06.00 WIB · Ring Road Stadion Utama · Rekomendasi Pintu 5 / 7</span>
+            </div>
+            <span class="gx-event-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="gx-event-card" href="gbk/event-tenis.html">
+            <div class="gx-date-badge"><strong>27</strong><small>Jun</small></div>
+            <div class="gx-event-info">
+              <small>Turnamen Terbuka · Tenis</small>
+              <strong>Senayan Open & Sesi Latihan Bersama</strong>
+              <span>08.00 WIB · Tennis Center Court · Akses Pintu 10 Senayan</span>
+            </div>
+            <span class="gx-event-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="gx-event-card" href="gbk/event-renang.html">
+            <div class="gx-date-badge"><strong>04</strong><small>Jul</small></div>
+            <div class="gx-event-info">
+              <small>Kejuaraan & Klinik · Akuatik</small>
+              <strong>Sesi Latihan Terjadwal & Uji Waktu Akuatik</strong>
+              <span>09.00 WIB · Stadion Akuatik · Akses Pintu 1 / Pintu 10</span>
+            </div>
+            <span class="gx-event-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="gx-event-card" href="gbk/istora.html">
+            <div class="gx-date-badge"><strong>18</strong><small>Jul</small></div>
+            <div class="gx-event-info">
+              <small>Kejuaraan Internasional · Bulu Tangkis</small>
+              <strong>Simulasi Turnamen Indoor Istora Senayan</strong>
+              <span>10.00 WIB · Istora Senayan · Terhubung MRT Istora Mandiri</span>
+            </div>
+            <span class="gx-event-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SIMULASI RUTE, GERBANG & PETA KAWASAN INTERAKTIF -->
+    <section class="gx-access-hub page-block" id="rute-pintar">
+      <div class="site-width">
+        <div class="gx-section-head">
+          <div>
+            <p class="eyebrow" style="color:var(--deep-red);">Navigasi Kawasan 279 Hektare</p>
+            <h2>Jangan Salah Gerbang.</h2>
+            <p class="lead-sub">Kompleks GBK memiliki 12 pintu akses. Pilih arena tujuan dan moda perjalanan Anda untuk mendapatkan rekomendasi gerbang terdekat dan titik turun transportasi umum.</p>
+          </div>
+          <a href="gbk/peta.html" class="gx-text">Buka Peta Penuh ↗</a>
+        </div>
+
+        <div class="gx-access-grid">
+          <div class="gx-route">
+            <p class="eyebrow" style="color:var(--deep-red);">Simulasi Rute Kedatangan</p>
+            <h3 style="font:italic 800 2.3rem/1 var(--display);text-transform:uppercase;margin:6px 0 12px;">Ke Arena Mana Hari Ini?</h3>
+            <label for="destination">Pilih Arena / Tujuan di GBK</label>
+            <select id="destination">
+              <option value="Stadion Utama (Rekomendasi: Pintu 5, 6, 7 & 10)" data-pin="stadion-utama">Stadion Utama Gelora Bung Karno</option>
+              <option value="Istora Senayan (Rekomendasi: Pintu 5 & Pintu 6 Sudirman)" data-pin="istora">Istora Senayan</option>
+              <option value="Stadion Akuatik (Rekomendasi: Pintu 1 & Pintu 10 Asia Afrika)" data-pin="akuatik">Stadion Akuatik</option>
+              <option value="Stadion Madya (Rekomendasi: Pintu 10 & Pintu 12 Gerbang Pemuda)" data-pin="madya">Stadion Madya</option>
+              <option value="Tennis Center Court (Rekomendasi: Pintu 10 Senayan)" data-pin="tenis">Tennis Center Court</option>
+              <option value="Hutan Kota GBK (Rekomendasi: Pintu 5 & Pintu 7 Sudirman)" data-pin="hutan-kota">Hutan Kota GBK</option>
+            </select>
+
+            <label for="travel">Moda Transportasi</label>
+            <select id="travel">
+              <option value="transit">MRT Jakarta / TransJakarta (Disarankan)</option>
+              <option value="driving">Kendaraan Pribadi / Drop-off Online</option>
+              <option value="walking">Pejalan Kaki / Sepeda dari Sudirman</option>
+            </select>
+
+            <a id="route-link" href="gbk/peta.html#stadion-utama" class="gx-action">Tampilkan Titik di Peta Kawasan ↗</a>
+          </div>
+
+          <div class="gx-map-card">
+            <div class="gx-map" role="region" aria-label="Skema orientasi venue GBK">
+              <a class="pin center" id="stadion-utama" href="gbk/stadion-utama.html">Stadion Utama</a>
+              <a class="pin east" id="istora" href="gbk/istora.html">Istora Senayan</a>
+              <a class="pin south" id="akuatik" href="gbk/akuatik.html">Stadion Akuatik</a>
+              <a class="pin west" id="madya" href="gbk/madya.html">Stadion Madya</a>
+              <a class="pin north" id="tenis" href="gbk/tenis.html">Tennis Center Court</a>
+              <a class="pin park" id="hutan-kota" href="gbk/hutan-kota.html">Hutan Kota</a>
+            </div>
+            <div class="gx-transit-strip" aria-label="Koneksi transportasi publik utama">
+              <div>
+                <strong>MRT Jakarta</strong>
+                <small>Stasiun Istora Mandiri (Pintu 5/6) & Stasiun Senayan Mastercard (Pintu 1).</small>
+              </div>
+              <div>
+                <strong>TransJakarta BRT</strong>
+                <small>Halte Gelora Bung Karno & Halte Bundaran Senayan di Koridor 1 Sudirman.</small>
+              </div>
+              <div>
+                <strong>Kantong Parkir</strong>
+                <small>Parkir Timur Senayan, Plaza Tenggara, Akuatik & Gedung Parkir Bertingkat.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. EKOSISTEM RESERVASI LOVE GBK -->
+    <section class="site-width page-block" id="reservasi-ekosistem">
+      <div class="gx-section-head">
+        <div>
+          <p class="eyebrow" style="color:var(--deep-red);">Transparan & Terintegrasi · LOVE GBK</p>
+          <h2>Sewa Arena untuk Komunitas hingga Event Dunia.</h2>
+          <p class="lead-sub">Mulai dari latihan klub olahraga sekolah, fun match perusahaan, hingga turnamen internasional dan konser stadion—alur pemesanan dirancang transparan dalam 4 tahap.</p>
+        </div>
+        <a href="gbk/reservasi.html" class="gx-action">Coba Simulasi Booking ↗</a>
+      </div>
+
+      <div class="gx-booking-steps">
+        <article class="gx-step-card">
+          <span class="gx-step-num">01</span>
+          <h3>Pilih Arena & Sesi</h3>
+          <p>Bandingkan spesifikasi teknis, kapasitas tribun, serta ketersediaan slot pagi, siang, atau malam sesuai kalender venue.</p>
+        </article>
+        <article class="gx-step-card">
+          <span class="gx-step-num">02</span>
+          <h3>Tentukan Kategori Acara</h3>
+          <p>Skema tarif dan perizinan disesuaikan secara otomatis untuk latihan rutin komunitas, turnamen olahraga, atau acara komersial.</p>
+        </article>
+        <article class="gx-step-card">
+          <span class="gx-step-num">03</span>
+          <h3>Verifikasi & Teknis</h3>
+          <p>Koordinasikan kebutuhan pencahayaan lux, ruang ganti atlet, loading logistik, dan pengamanan gerbang bersama tim PPKGBK.</p>
+        </article>
+        <article class="gx-step-card">
+          <span class="gx-step-num">04</span>
+          <h3>E-Permit & Pelaksanaan</h3>
+          <p>Terbitkan konfirmasi resmi dan bagikan panduan akses pintu serta kantong parkir kepada seluruh atlet atau penonton.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8. WARISAN SEJARAH 1962 - HARI INI -->
+    <section class="gx-feature">
+      <div class="site-width">
+        <div>
+          <p class="eyebrow" style="color:var(--gold-sport);">Cagar Budaya Nasional · Sejarah Kawasan</p>
+          <h2>Dari Asian Games 1962<br>ke Panggung Dunia.</h2>
+          <p>Gagasan Presiden Soekarno untuk Asian Games IV tahun 1962 melahirkan mahakarya arsitektur olahraga modern di Asia Tenggara. Enam dekade kemudian, kawasan Senayan terus berevolusi menjadi ekosistem olahraga pintar dan ruang terbuka hijau kebanggaan Indonesia.</p>
+          <div class="gx-heritage-milestones">
+            <div><strong>1962</strong><span>Asian Games IV & peresmian Stadion Utama</span></div>
+            <div><strong>2018</strong><span>Revitalisasi besar Asian Games XVIII & Cagar Budaya</span></div>
+            <div><strong>2026</strong><span>Ekosistem Digital, Hijau & Inklusif Berkelanjutan</span></div>
+          </div>
+          <div class="actions">
+            <a href="gbk/sejarah.html" class="gx-cut">Jelajahi Linimasa Sejarah ↗</a>
+            <a href="gbk/informasi.html" class="gx-outline">Profil PPKGBK ↗</a>
+          </div>
+        </div>
+        <div class="track-art" aria-hidden="true">
+          <div class="track-art-inner">
+            <strong>64+ TAHUN</strong>
+            <span>Warisan Olahraga Bangsa</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="site-width">
-      <a class="site-brand" href="gbk.html"><strong>GBK<span>.</span></strong><span>Gelora<br>Bung Karno</span></a>
-      <nav aria-label="Navigasi studi"><a href="index.html">Kajian revamp</a><a href="jcc.html">Konsep JCC ↗</a><a href="gbk/informasi.html">Pusat informasi</a></nav>
+      <div class="gx-footer-grid">
+        <div class="gx-footer-col">
+          <a class="site-brand" href="gbk.html">
+            <strong>GBK<span>.</span></strong>
+            <span>Gelora<br>Bung Karno</span>
+          </a>
+          <p>Pusat Pengelolaan Kompleks Gelora Bung Karno (PPKGBK) — Kementerian Sekretariat Negara Republik Indonesia. Jl. Pintu Satu Senayan, Jakarta Pusat 10270.</p>
+        </div>
+        <div class="gx-footer-col">
+          <h3>Arena Utama</h3>
+          <ul>
+            <li><a href="gbk/stadion-utama.html">Stadion Utama GBK</a></li>
+            <li><a href="gbk/istora.html">Istora Senayan</a></li>
+            <li><a href="gbk/akuatik.html">Stadion Akuatik</a></li>
+            <li><a href="gbk/madya.html">Stadion Madya</a></li>
+            <li><a href="gbk/tenis.html">Tennis Center Court</a></li>
+            <li><a href="gbk/hutan-kota.html">Hutan Kota GBK</a></li>
+          </ul>
+        </div>
+        <div class="gx-footer-col">
+          <h3>Layanan & Panduan</h3>
+          <ul>
+            <li><a href="gbk/reservasi.html">Simulasi Reservasi Venue</a></li>
+            <li><a href="gbk/agenda.html">Kalender & Agenda Acara</a></li>
+            <li><a href="gbk/kunjungan.html">Panduan MRT & Gerbang</a></li>
+            <li><a href="gbk/peta.html">Peta Skema Kawasan</a></li>
+            <li><a href="gbk/informasi.html">Tata Tertib & FAQ</a></li>
+          </ul>
+        </div>
+        <div class="gx-footer-col">
+          <h3>Jam Operasional</h3>
+          <ul>
+            <li>Kawasan Luar: 05.00 – 22.00 WIB</li>
+            <li>Ring Road SUGBK: 06.00 – 20.00 WIB</li>
+            <li>Hutan Kota: 06.00–10.00 & 15.00–18.00</li>
+            <li>Pusat Informasi: Pintu 5 & Pintu 10</li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;width:100%;">
+        <small style="color:#b89ea4;">© 2026 Prototipe Kajian Revamp Gelora Bung Karno · Dirancang untuk Skala Nasional</small>
+        <nav aria-label="Navigasi studi">
+          <a href="index.html">← Kajian Revamp</a>
+          <a href="jcc.html">Lihat Konsep JCC ↗</a>
+          <a href="gbk/informasi.html">Pusat Informasi</a>
+        </nav>
+      </div>
     </div>
   </footer>
 </body>

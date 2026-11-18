@@ -3,41 +3,410 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Jakarta Convention Center — Prototipe revamp Jakarta Convention Center.">
-  <title>Jakarta Convention Center | Jakarta Convention Center</title>
+  <meta name="description" content="Jakarta Convention Center — Ruang Konvensi, Perayaan Agung, dan Pameran Berkelas Dunia di Jantung Senayan, Jakarta.">
+  <title>JCC Senayan · Jakarta Convention Center | Destinasi Konvensi & Perayaan Berkelas Dunia</title>
   <link rel="stylesheet" href="assets/jcc.css">
   <script defer src="assets/jcc.js"></script>
 </head>
 <body class="jccx desk home">
   <a class="skip" href="#main">Langsung ke konten</a>
+
+  <!-- TOP FLOATING PILL NAVBAR -->
   <header class="site-mast">
-    <div class="site-utility"><div class="site-width"><a href="index.html">← Kajian revamp</a><span>Prototipe desain · Foto ilustratif</span></div></div>
-    <div class="site-width site-nav">
-      <a class="site-brand" href="jcc.html" aria-label="Jakarta Convention Center, beranda"><span>Jakarta<br>Convention Center</span></a>
-      <nav aria-label="Navigasi utama"><a href="jcc/ruang.html">Ruang</a><a href="jcc/perencana.html">Rencanakan acara</a><a href="jcc/agenda.html">Agenda</a><a href="jcc/kunjungan.html">Kunjungan</a><a href="jcc/dokumen.html">Denah &amp; dokumen</a><a href="jcc/layanan.html">Layanan</a></nav>
-      <a href="jcc/perencana.html#brief" class="jx-outline">Minta penawaran ↗</a>
+    <div class="site-utility">
+      <div class="site-width">
+        <a href="index.html">← Kembali ke Kajian Revamp UI/UX</a>
+        <span>Jakarta Convention Center · Balai Sidang Jakarta Senayan</span>
+      </div>
+    </div>
+    <div class="site-nav">
+      <button type="button" class="jx-menu-pill" data-menu-toggle aria-expanded="false" aria-controls="jcc-drawer">
+        <span aria-hidden="true">≡</span> Menu
+      </button>
+      <a class="site-brand" href="jcc.html" aria-label="Jakarta Convention Center, beranda"><span>JCC</span></a>
+      <nav aria-label="Navigasi utama">
+        <a href="jcc/ruang.html">Koleksi Ruang</a>
+        <a href="jcc/perencana.html">Rencanakan</a>
+        <a href="jcc/agenda.html">Agenda</a>
+        <a href="jcc/dokumen.html">Denah</a>
+        <a href="jcc/layanan.html">Hospitality</a>
+      </nav>
+      <a href="jcc/perencana.html#brief" class="jx-outline">Rencanakan Acara</a>
+    </div>
+
+    <!-- Expandable Visual Menu Drawer -->
+    <div class="jx-drawer" id="jcc-drawer" hidden>
+      <div class="jx-drawer-photos" aria-label="Sorotan ruang visual">
+        <a href="jcc/plenary.html">
+          <img src="assets/jcc-plenary.webp" alt="Plenary Hall" loading="lazy">
+          <span>Plenary Hall ↗</span>
+        </a>
+        <a href="jcc/assembly.html">
+          <img src="assets/jcc-assembly.webp" alt="Assembly Hall" loading="lazy">
+          <span>Assembly Hall ↗</span>
+        </a>
+      </div>
+      <div class="jx-drawer-col">
+        <h3>Ruang & Arsitektur</h3>
+        <ul>
+          <li><a href="jcc/plenary.html">Plenary Hall (5.000 Kursi)</a></li>
+          <li><a href="jcc/assembly.html">Assembly Hall (Gala 2.500)</a></li>
+          <li><a href="jcc/cendrawasih.html">Cendrawasih Room (2.109 m²)</a></li>
+          <li><a href="jcc/hall-a.html">Exhibition Hall A (3.060 m²)</a></li>
+          <li><a href="jcc/hall-b.html">Exhibition Hall B (6.075 m²)</a></li>
+          <li><a href="jcc/main-lobby.html">Main Lobby (5.500 m²)</a></li>
+        </ul>
+      </div>
+      <div class="jx-drawer-col">
+        <h3>Panduan Penyelenggara</h3>
+        <ul>
+          <li><a href="jcc/ruang.html#bandingkan">Bandingkan Kapasitas Ruang</a></li>
+          <li><a href="jcc/perencana.html#brief">Susun Brief & Penawaran</a></li>
+          <li><a href="jcc/dokumen.html">Denah Lantai & Dokumen Teknis</a></li>
+          <li><a href="jcc/layanan.html">Katering In-House & Produksi</a></li>
+          <li><a href="jcc/kunjungan.html">Akses VIP & Koneksi Hotel</a></li>
+          <li><a href="jcc/profil.html">Sejarah KTT sejak 1992</a></li>
+        </ul>
+      </div>
     </div>
   </header>
-  <main id="main">
 
-    <section class="jx-stage" aria-labelledby="jcc-title">
-      <img src="assets/jcc-hero.webp" alt="Ilustrasi tata ruang konvensi dengan panggung dan susunan kursi teater" fetchpriority="high">
-      <div class="site-width jx-stage-copy"><div><p class="eyebrow">Senayan, Jakarta</p><h1 id="jcc-title">Ruang untuk<br>pertemuan <em>penting.</em></h1><p>Konvensi, pameran, dan jamuan di Jakarta Convention Center.</p><a href="jcc/ruang.html" class="jx-outline">Jelajahi ruang ↗</a></div></div>
-      <div class="site-width jx-stage-foot"><span>Jakarta Convention Center</span><a href="jcc/perencana.html">Panduan penyelenggara ↗</a></div>
-    </section>
-    <section class="site-width jx-editorial page-block">
-      <div class="jx-editorial-copy"><p class="eyebrow">Ruang & kapasitas</p><h2>Bentuk ruang<br>mengikuti acara.</h2><p>Pilih berdasarkan kapasitas dan konfigurasi, lalu pelajari denah sebelum menghubungi tim JCC.</p><a href="jcc/ruang.html" class="jx-under">Lihat katalog & bandingkan ruang ↗</a></div>
-      <div class="jx-duet">
-        <figure><a href="jcc/assembly.html"><img src="assets/jcc-assembly.webp" alt="" loading="lazy"></a><figcaption><a href="jcc/assembly.html">Assembly Hall ↗</a><span>Jamuan duduk · 2.500</span></figcaption></figure>
-        <figure><a href="jcc/main-lobby.html"><img src="assets/jcc-venue.webp" alt="" loading="lazy"></a><figcaption><a href="jcc/main-lobby.html">Main Lobby ↗</a><span>Area serbaguna · 5.500 m²</span></figcaption></figure>
+  <main id="main">
+    <!-- 1. HERO SECTION INSPIRED DIRECTLY BY REFERENCE IMAGE -->
+    <section class="jx-awwwards-hero" aria-labelledby="jcc-title">
+      <div class="jx-hero-head">
+        <h1 id="jcc-title">
+          Mengubah Pertemuan Penting Menjadi<br>
+          Perayaan &amp; Konvensi
+          <span class="jx-circled">
+            Berkelas Dunia
+            <svg viewBox="0 0 360 92" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M18 48C16 21 92 8 184 9C276 10 348 22 346 47C344 73 266 84 176 83C85 82 14 70 22 43C29 19 108 13 192 14" stroke="#6e3637" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M12 51C14 25 89 12 182 12C274 12 352 26 350 50C348 75 271 87 179 86C87 85 11 73 15 47" stroke="#6e3637" stroke-width="1.1" stroke-opacity="0.7" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+        <p>Dari KTT kenegaraan yang bersejarah dan pameran industri global hingga perayaan pernikahan agung—kami menyatukan perencanaan matang, detail arsitektur yang elegan, dan kuliner bintang lima untuk menciptakan momen yang tak terlupakan.</p>
+      </div>
+
+      <!-- 4-Photo Curved Panorama Strip -->
+      <div class="jx-arc-gallery" aria-label="Galeri kurasi suasana acara di JCC">
+        <div class="jx-arc-grid">
+          <figure class="jx-arc-item">
+            <a href="jcc/plenary.html">
+              <img src="assets/jcc-plenary.webp" alt="Auditorium melingkar Plenary Hall saat konferensi tingkat tinggi" fetchpriority="high">
+              <figcaption>
+                <strong>Plenary Hall</strong>
+                <span>5.000 Kursi ↗</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="jx-arc-item">
+            <a href="jcc/ruang.html">
+              <img src="assets/jcc-hero.webp" alt="Tata panggung konvensi dengan pencahayaan biru dramatis" loading="lazy">
+              <figcaption>
+                <strong>Grand Stage &amp; Summit</strong>
+                <span>Akustik Presisi ↗</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="jx-arc-item">
+            <a href="jcc/assembly.html">
+              <img src="assets/jcc-gala.webp" alt="Dekorasi jamuan malam dan lampu gantung kristal di Assembly Hall" loading="lazy">
+              <figcaption>
+                <strong>Royal Gala &amp; Wedding</strong>
+                <span>Jamuan 2.500 Tamu ↗</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="jx-arc-item">
+            <a href="jcc/main-lobby.html">
+              <img src="assets/jcc-venue.webp" alt="Foyer marmer dan pilar keemasan Main Lobby JCC" loading="lazy">
+              <figcaption>
+                <strong>Main Lobby Foyer</strong>
+                <span>5.500 m² Serbaguna ↗</span>
+              </figcaption>
+            </a>
+          </figure>
+        </div>
       </div>
     </section>
-    <section class="jx-burgundy"><div class="site-width jx-service-band page-block"><div><p class="eyebrow">Untuk penyelenggara</p><h2>Dari denah<br>ke hari acara.</h2></div><div><p>Siapkan layout, kebutuhan teknis, katering, dan jadwal bongkar muat dalam satu brief.</p><a href="jcc/perencana.html" class="jx-outline">Rencanakan acara ↗</a></div></div></section>
+
+    <!-- 2. "WE CREATE Moments TO REMEMBER" MONUMENTAL EDITORIAL SECTION -->
+    <section class="jx-moments" aria-label="Filosofi dan sejarah JCC Senayan">
+      <div class="jx-moments-meta">
+        <span>1992</span>
+        <span>TENTANG JCC SENAYAN</span>
+        <span>2026</span>
+      </div>
+
+      <div class="jx-moments-display">
+        <div class="jx-tall-word">WE CREATE</div>
+        <div class="jx-photo-word">Moments</div>
+        <div class="jx-tall-word">TO REMEMBER</div>
+      </div>
+
+      <h2 class="jx-moments-sub">Kami Mengubah Visi Acara Anda Menjadi Mahakarya!</h2>
+      <p class="jx-moments-copy">Dari perhelatan diplomatik yang intim hingga eksibisi akbar lintas benua, kami memadukan kurasi tata ruang, keahlian teknis panggung, dan keramahtamahan khas Nusantara di jantung kawasan Senayan.</p>
+      <div class="jx-moments-actions">
+        <a href="jcc/ruang.html" class="jx-pill-dark">Jelajahi Koleksi Ruang ↗</a>
+        <a href="jcc/perencana.html#brief" class="jx-outline" style="color:var(--rosewood);">Susun Brief Acara ↗</a>
+      </div>
+    </section>
+
+    <!-- 3. WIDE ATMOSPHERIC PANORAMA WITH GLASS STATS -->
+    <section class="jx-panorama" aria-label="Skala dan kapasitas Jakarta Convention Center">
+      <img src="assets/jcc-plenary.webp" alt="Panorama interior megah Plenary Hall Jakarta Convention Center" loading="lazy">
+      <div class="jx-panorama-bar">
+        <div>
+          <strong>30.000+ m²</strong>
+          <span>Total Area Konvensi &amp; Eksibisi Terpadu</span>
+        </div>
+        <div>
+          <strong>13 Ruang</strong>
+          <span>Hall Ikonik &amp; Ruang Sidang Modular</span>
+        </div>
+        <div>
+          <strong>10.000 Porsi</strong>
+          <span>Kapasitas Dapur Eksekutif Bintang Lima</span>
+        </div>
+        <div>
+          <strong>34+ Tahun</strong>
+          <span>Tuan Rumah KTT Dunia &amp; Perayaan Nasional</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PHOTO-FIRST BENTO COLLECTION OF 6 SIGNATURE HALLS -->
+    <section class="site-width page-block" id="koleksi-ruang">
+      <div class="jx-section-header">
+        <div>
+          <p class="eyebrow">Arsitektur &amp; Kapasitas</p>
+          <h2>Koleksi Ruang Ikonik.</h2>
+        </div>
+        <div>
+          <p>Setiap ruang dirancang memiliki karakter visual, tinggi plafon, dan fleksibilitas partisi yang berbeda—memungkinkan satu acara mengalir mulus dari sesi pleno ke jamuan malam.</p>
+          <a href="jcc/ruang.html#bandingkan" class="jx-under" style="margin-top:10px;">Buka Matriks Perbandingan Ruang ↗</a>
+        </div>
+      </div>
+
+      <div class="jx-bento-gallery">
+        <!-- Card 1: Plenary Hall -->
+        <a class="jx-bento-card span-7" href="jcc/plenary.html">
+          <img src="assets/jcc-plenary.webp" alt="Auditorium melingkar Plenary Hall" loading="lazy">
+          <div class="jx-bento-top">
+            <span class="jx-glass-pill">Konvensi · Konser · Sidang Pleno</span>
+            <span class="jx-glass-pill">5.000 Kursi Teater</span>
+          </div>
+          <div class="jx-bento-body">
+            <h3>Plenary Hall</h3>
+            <p>Auditorium bundar ikonik tanpa pilar penghalang dengan balkon mezzanine 360°, tata cahaya panggung teatrikal, dan bilik interpretasi simultan 8 bahasa.</p>
+            <div class="jx-bento-foot">
+              <span>Lantai Utama &amp; Mezzanine · Akses Main Lobby</span>
+              <span>Lihat Detail &amp; Denah ↗</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2: Assembly Hall -->
+        <a class="jx-bento-card span-5" href="jcc/assembly.html">
+          <img src="assets/jcc-assembly.webp" alt="Jamuan malam elegan di Assembly Hall" loading="lazy">
+          <div class="jx-bento-top">
+            <span class="jx-glass-pill">Gala Dinner · Royal Wedding</span>
+            <span class="jx-glass-pill">3.921 m²</span>
+          </div>
+          <div class="jx-bento-body">
+            <h3>Assembly Hall</h3>
+            <p>Ballroom megah dengan lampu gantung kontemporer dan ukiran kayu Nusantara. Dapat dibagi menjadi 3 ruang terpisah untuk 2.500 tamu jamuan duduk atau 4.500 tamu resepsi.</p>
+            <div class="jx-bento-foot">
+              <span>2.500 Jamuan · 4.500 Buffet</span>
+              <span>Lihat Detail &amp; Denah ↗</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: Main Lobby -->
+        <a class="jx-bento-card span-4" href="jcc/main-lobby.html">
+          <img src="assets/jcc-venue.webp" alt="Pilar marmer keemasan di Main Lobby JCC" loading="lazy">
+          <div class="jx-bento-top">
+            <span class="jx-glass-pill">Grand Foyer · Registrasi</span>
+            <span class="jx-glass-pill">5.500 m²</span>
+          </div>
+          <div class="jx-bento-body">
+            <h3>Main Lobby</h3>
+            <p>Serambi marmer megah berlapis cahaya alami yang menghubungkan Plenary Hall, Assembly Hall, dan Exhibition Hall.</p>
+            <div class="jx-bento-foot">
+              <span>Jantung Sirkulasi Tamu VIP</span>
+              <span>Jelajahi Ruang ↗</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4: Cendrawasih Room -->
+        <a class="jx-bento-card span-4" href="jcc/cendrawasih.html">
+          <img src="assets/jcc-summit.webp" alt="Konfigurasi konferensi di Cendrawasih Room" loading="lazy">
+          <div class="jx-bento-top">
+            <span class="jx-glass-pill">Konferensi · Resepsi</span>
+            <span class="jx-glass-pill">2.109 m²</span>
+          </div>
+          <div class="jx-bento-body">
+            <h3>Cendrawasih Room</h3>
+            <p>Ruang serbaguna fleksibel dengan sistem partisi kedap suara, mikrofon konferensi digital, dan kapasitas hingga 2.000 kursi teater.</p>
+            <div class="jx-bento-foot">
+              <span>1.300 Jamuan · 2.000 Teater</span>
+              <span>Jelajahi Ruang ↗</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 5: Exhibition Hall A & B -->
+        <a class="jx-bento-card span-4" href="jcc/hall-b.html">
+          <img src="assets/jcc-exhibition.webp" alt="Bentang luas Exhibition Hall A dan B" loading="lazy">
+          <div class="jx-bento-top">
+            <span class="jx-glass-pill">Pameran &amp; Trade Expo</span>
+            <span class="jx-glass-pill">9.585 m² Gabungan</span>
+          </div>
+          <div class="jx-bento-body">
+            <h3>Exhibition Hall A &amp; B</h3>
+            <p>Hall eksibisi bebas kolom dengan tinggi plafon 9 meter, kapasitas beban lantai 1.500 kg/m², dan akses masuk truk kontainer langsung ke dalam hall.</p>
+            <div class="jx-bento-foot">
+              <span>Hall A (3.060 m²) + Hall B (6.075 m²)</span>
+              <span>Jelajahi Ruang ↗</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. INTERACTIVE CURATED EVENT LOOKBOOK (PHOTO SPREADS) -->
+    <section class="jx-lookbook page-block" id="lookbook">
+      <div class="site-width">
+        <div class="jx-section-header">
+          <div>
+            <p class="eyebrow">Kurasi Pengalaman</p>
+            <h2>Satu Destinasi, Beragam Perayaan.</h2>
+          </div>
+          <p>Pilih skenario acara di bawah ini untuk meninjau kombinasi ruang, konfigurasi tata letak, dan suasana visual yang paling sesuai dengan agenda Anda.</p>
+        </div>
+
+        <div class="jx-lookbook-tabs" role="group" aria-label="Pilih skenario acara">
+          <button type="button" data-lookbook="summit" aria-pressed="true">01 · KTT &amp; Konferensi Dunia</button>
+          <button type="button" data-lookbook="gala" aria-pressed="false">02 · Royal Wedding &amp; Gala Dinner</button>
+          <button type="button" data-lookbook="expo" aria-pressed="false">03 · Pameran &amp; Expo Internasional</button>
+          <button type="button" data-lookbook="concert" aria-pressed="false">04 · Konser &amp; Pertunjukan</button>
+        </div>
+
+        <div class="jx-lookbook-panel" id="lookbook-stage" aria-live="polite">
+          <div class="jx-lookbook-visuals">
+            <figure>
+              <img id="lb-img-1" src="assets/jcc-plenary.webp" alt="Sidang Pleno KTT di Plenary Hall" loading="lazy">
+              <figcaption id="lb-cap-1">Plenary Hall · Sidang Pembukaan 5.000 Delegasi</figcaption>
+            </figure>
+            <figure>
+              <img id="lb-img-2" src="assets/jcc-summit.webp" alt="Konfigurasi meja bundar diplomatik" loading="lazy">
+              <figcaption id="lb-cap-2">Cendrawasih &amp; Lower Lobby · Ruang Bilateral</figcaption>
+            </figure>
+          </div>
+          <div class="jx-lookbook-copy">
+            <p class="eyebrow" id="lb-eyebrow">Protokol Kenegaraan &amp; Kongres</p>
+            <h3 id="lb-title">KTT Internasional &amp; Simposium Global</h3>
+            <p id="lb-desc">Sejak KTT Non-Blok 1992 hingga ASEAN Summit, JCC menyediakan jalur kedatangan kepala negara yang terpisah, ruang tahan-sadap, pusat media berkecepatan tinggi, dan konektivitas bawah tanah langsung ke Hotel Sultan.</p>
+            <div class="jx-lookbook-specs">
+              <div>
+                <strong id="lb-stat-1">5.000 Kursi</strong>
+                <span id="lb-label-1">Kapasitas Sesi Pleno Utama</span>
+              </div>
+              <div>
+                <strong id="lb-stat-2">13 Ruang</strong>
+                <span id="lb-label-2">Breakout &amp; Komisi Paralel</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a id="lb-link" href="jcc/acara-forum.html" class="jx-pill-dark">Lihat Studi Kasus Forum ↗</a>
+              <a href="jcc/perencana.html#brief" class="jx-under">Susun Brief Serupa ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. VISUAL HOSPITALITY & PRODUCTION TRIPTYCH -->
+    <section class="site-width page-block" aria-label="Keunggulan layanan in-house JCC">
+      <div class="jx-section-header">
+        <div>
+          <p class="eyebrow">Layanan Terpadu</p>
+          <h2>Detail yang Menyempurnakan Acara.</h2>
+        </div>
+        <a href="jcc/layanan.html" class="jx-pill-dark">Jelajahi Seluruh Layanan ↗</a>
+      </div>
+
+      <div class="jx-triptych">
+        <article class="jx-triptych-card">
+          <div class="jx-triptych-photo">
+            <img src="assets/jcc-gala.webp" alt="Hidangan jamuan gala bintang lima di JCC" loading="lazy">
+          </div>
+          <div class="jx-triptych-body">
+            <p class="eyebrow">In-House Culinary</p>
+            <h3>Gastronomi Bintang Lima</h3>
+            <p>Dapur eksekutif bersertifikasi HACCP &amp; Halal yang dipimpin oleh tim Executive Chef internasional—siap menyajikan jamuan fine dining untuk 2.500 tamu maupun buffet 10.000 delegasi.</p>
+            <a href="jcc/layanan.html" class="jx-under">Standar Katering JCC ↗</a>
+          </div>
+        </article>
+
+        <article class="jx-triptych-card">
+          <div class="jx-triptych-photo">
+            <img src="assets/jcc-hero.webp" alt="Tata cahaya panggung dan rigging teknis JCC" loading="lazy">
+          </div>
+          <div class="jx-triptych-body">
+            <p class="eyebrow">Produksi &amp; Teknis</p>
+            <h3>Rigging, Akustik &amp; Panggung</h3>
+            <p>Titik gantung (rigging points) berkapasitas tinggi, sistem tata suara line-array, pencahayaan panggung terprogram, serta jaringan serat optik dedikasi di setiap hall.</p>
+            <a href="jcc/dokumen.html" class="jx-under">Unduh Spesifikasi Teknis ↗</a>
+          </div>
+        </article>
+
+        <article class="jx-triptych-card">
+          <div class="jx-triptych-photo">
+            <img src="assets/jcc-venue.webp" alt="Akses logistik dan serambi VIP JCC" loading="lazy">
+          </div>
+          <div class="jx-triptych-body">
+            <p class="eyebrow">Logistik &amp; Akses VIP</p>
+            <h3>Loading Dock Langsung &amp; Lounge</h3>
+            <p>Truk logistik dapat masuk langsung ke lantai Exhibition Hall A &amp; B untuk efisiensi bongkar-muat, sementara tamu kehormatan menikmati akses privat dan ruang tunggu VIP.</p>
+            <a href="jcc/kunjungan.html" class="jx-under">Panduan Akses &amp; Parkir ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. CONCIERGE CTA BAND -->
+    <section class="jx-burgundy">
+      <div class="site-width jx-service-band page-block">
+        <div>
+          <p class="eyebrow">Untuk Penyelenggara &amp; Perencana Acara</p>
+          <h2>Dari Denah Konsep<br>Menuju Hari H yang Sempurna.</h2>
+        </div>
+        <div>
+          <p style="color:#e9d8d9;max-width:440px;margin-bottom:22px;">Bandingkan kapasitas antar-ruang secara berdampingan, tinjau denah konsep, dan buat draf brief acara instan untuk didiskusikan bersama tim spesialis venue JCC.</p>
+          <div class="actions">
+            <a href="jcc/perencana.html#brief" class="jx-solid">Susun Brief Acara Sekarang ↗</a>
+            <a href="jcc/ruang.html#bandingkan" class="jx-outline">Bandingkan Ruang ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="site-width">
-      <a class="site-brand" href="jcc.html"><span>Jakarta<br>Convention Center</span></a>
-      <nav aria-label="Navigasi studi"><a href="index.html">Kajian revamp</a><a href="gbk.html">Konsep GBK ↗</a><a href="jcc/profil.html">Profil JCC ↗</a></nav>
+      <a class="site-brand" href="jcc.html"><span>JCC</span></a>
+      <nav aria-label="Navigasi studi">
+        <a href="index.html">← Kajian Revamp</a>
+        <a href="gbk.html">Lihat Konsep GBK ↗</a>
+        <a href="jcc/ruang.html">Koleksi Ruang</a>
+        <a href="jcc/dokumen.html">Denah &amp; Dokumen</a>
+        <a href="jcc/profil.html">Profil JCC ↗</a>
+      </nav>
     </div>
   </footer>
 </body>

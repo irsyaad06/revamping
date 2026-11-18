@@ -1,3 +1,110 @@
+// Top Menu Drawer Toggle
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const menuDrawer = document.querySelector('#jcc-drawer');
+if (menuToggle && menuDrawer) {
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    menuDrawer.hidden = expanded;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !menuDrawer.hidden) {
+      menuDrawer.hidden = true;
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.focus();
+    }
+  });
+}
+
+// Interactive Event Lookbook Tabs on Homepage
+const lookbookButtons = [...document.querySelectorAll('[data-lookbook]')];
+if (lookbookButtons.length) {
+  const scenarios = {
+    summit: {
+      img1: 'assets/jcc-plenary.webp',
+      cap1: 'Plenary Hall · Sidang Pembukaan 5.000 Delegasi',
+      img2: 'assets/jcc-summit.webp',
+      cap2: 'Cendrawasih & Lower Lobby · Ruang Bilateral',
+      eyebrow: 'Protokol Kenegaraan & Kongres',
+      title: 'KTT Internasional & Simposium Global',
+      desc: 'Sejak KTT Non-Blok 1992 hingga ASEAN Summit, JCC menyediakan jalur kedatangan kepala negara yang terpisah, ruang sidang kedap suara, pusat media berkecepatan tinggi, dan konektivitas langsung.',
+      stat1: '5.000 Kursi',
+      label1: 'Kapasitas Sesi Pleno Utama',
+      stat2: '13 Ruang',
+      label2: 'Breakout & Komisi Paralel',
+      link: 'jcc/acara-forum.html',
+      linkText: 'Lihat Studi Kasus Forum ↗',
+    },
+    gala: {
+      img1: 'assets/jcc-gala.webp',
+      cap1: 'Assembly Hall · Royal Wedding & Gala Dinner',
+      img2: 'assets/jcc-assembly.webp',
+      cap2: 'Chandelier Ballroom & Tata Meja Bundar',
+      eyebrow: 'Perayaan Agung & Jamuan Malam',
+      title: 'Pernikahan Megah & Gala Dinner Eksklusif',
+      desc: 'Wujudkan resepsi impian atau malam penghargaan korporat di Assembly Hall dan Cendrawasih Room dengan plafon tinggi, dekorasi floral gantung, dan sajian kuliner bintang lima.',
+      stat1: '2.500 Tamu',
+      label1: 'Jamuan Duduk Meja Bundar',
+      stat2: '4.500 Tamu',
+      label2: 'Resepsi Standing Buffet',
+      link: 'jcc/assembly.html',
+      linkText: 'Jelajahi Assembly Hall ↗',
+    },
+    expo: {
+      img1: 'assets/jcc-exhibition.webp',
+      cap1: 'Exhibition Hall A & B · Bentang Tanpa Kolom',
+      img2: 'assets/jcc-venue.webp',
+      cap2: 'Main Lobby · Area Registrasi & Paviliun Sponsor',
+      eyebrow: 'Pameran Dagang & Eksibisi Publik',
+      title: 'Pameran Lintas Industri & Trade Show',
+      desc: 'Gabungan Exhibition Hall A dan Hall B menghadirkan lantai pameran seluas 9.585 m² dengan plafon 9 meter, saluran utilitas bawah lantai, dan akses truk langsung ke dalam hall.',
+      stat1: '9.585 m²',
+      label1: 'Luas Gabungan Hall A & B',
+      stat2: '1.500 kg/m²',
+      label2: 'Kapasitas Beban Lantai',
+      link: 'jcc/acara-expo.html',
+      linkText: 'Lihat Skema Pameran ↗',
+    },
+    concert: {
+      img1: 'assets/jcc-hero.webp',
+      cap1: 'Plenary & Assembly · Panggung Konser Spektakuler',
+      img2: 'assets/jcc-plenary.webp',
+      cap2: 'Balkon 360° dengan Jarak Pandang Intim',
+      eyebrow: 'Pertunjukan Musik & Budaya',
+      title: 'Konser Orkestra, Jazz Festival & Pertunjukan',
+      desc: 'Akustik ruang yang hangat dan tata tempat duduk bertingkat di Plenary Hall menghadirkan pengalaman konser berskala besar yang tetap intim bagi setiap penonton.',
+      stat1: '5.000 Penonton',
+      label1: 'Konfigurasi Auditorium & Festival',
+      stat2: '360° Pandang',
+      label2: 'Tata Kursi Lantai Utama & Balkon',
+      link: 'jcc/plenary.html',
+      linkText: 'Spesifikasi Plenary Hall ↗',
+    },
+  };
+
+  for (const btn of lookbookButtons) {
+    btn.addEventListener('click', () => {
+      const data = scenarios[btn.dataset.lookbook];
+      if (!data) return;
+      for (const b of lookbookButtons) b.setAttribute('aria-pressed', String(b === btn));
+      document.querySelector('#lb-img-1').src = data.img1;
+      document.querySelector('#lb-cap-1').textContent = data.cap1;
+      document.querySelector('#lb-img-2').src = data.img2;
+      document.querySelector('#lb-cap-2').textContent = data.cap2;
+      document.querySelector('#lb-eyebrow').textContent = data.eyebrow;
+      document.querySelector('#lb-title').textContent = data.title;
+      document.querySelector('#lb-desc').textContent = data.desc;
+      document.querySelector('#lb-stat-1').textContent = data.stat1;
+      document.querySelector('#lb-label-1').textContent = data.label1;
+      document.querySelector('#lb-stat-2').textContent = data.stat2;
+      document.querySelector('#lb-label-2').textContent = data.label2;
+      const link = document.querySelector('#lb-link');
+      link.href = data.link;
+      link.textContent = data.linkText;
+    });
+  }
+}
+
 const setup = document.querySelector('#setup');
 if (setup) {
   const attendance = document.querySelector('#attendance');

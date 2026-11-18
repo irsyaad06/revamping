@@ -6,7 +6,9 @@ if (carousel) {
   function selectFrame(index) {
     for (const [position, frame] of frames.entries()) {
       frame.hidden = position !== index;
-      controls[position].setAttribute('aria-pressed', String(position === index));
+      if (controls[position]) {
+        controls[position].setAttribute('aria-pressed', String(position === index));
+      }
     }
   }
 
@@ -33,21 +35,56 @@ if (filters) {
   function filterVenues(value) {
     for (const button of buttons) button.setAttribute('aria-pressed', String(button.value === value));
     for (const venue of venues) venue.hidden = value !== 'all' && venue.dataset.sport !== value;
-    status.textContent = `${venues.filter(venue => !venue.hidden).length} venue`;
+    if (status) {
+      status.hidden = false;
+      status.textContent = `Menampilkan ${venues.filter(venue => !venue.hidden).length} arena berstandar internasional`;
+    }
   }
 
   for (const button of buttons) button.addEventListener('click', () => filterVenues(button.value));
   if (buttons.some(button => button.value === requested)) filterVenues(requested);
 }
 
+const timeButtons = [...document.querySelectorAll('[data-time-slot]')];
+const crowdOutput = document.querySelector('#crowd-output');
+if (timeButtons.length && crowdOutput) {
+  const slotData = {
+    pagi: {
+      title: 'Sesi Pagi (05.30–09.30 WIB) · Udara Segar & Komunitas Lari',
+      desc: 'Waktu paling ideal untuk long run di Jalur Lingkar 3,5 km, bersepeda, dan piknik pagi di Hutan Kota. Gerbang utama Pintu 5 (MRT Istora) dan Pintu 10 beroperasi penuh.',
+    },
+    siang: {
+      title: 'Sesi Siang (10.00–15.00 WIB) · Latihan Indoor & Kunjungan Tenang',
+      desc: 'Kepadatan jalur luar sangat lengang. Waktu ideal untuk sesi latihan terjadwal di Istora, Stadion Akuatik, Tennis Indoor, atau bersantai di koridor kuliner Senayan.',
+    },
+    sore: {
+      title: 'Sesi Sore & Malam (16.00–21.30 WIB) · Night Run & Pencahayaan Artistik',
+      desc: 'Ring Road SUGBK dipenuhi pelari selepas jam kerja dengan latar pencahayaan megah fasad Temu Gelang. Gunakan MRT Jakarta untuk menghindari kepadatan lalu lintas sore.',
+    },
+  };
+
+  for (const btn of timeButtons) {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.timeSlot;
+      for (const b of timeButtons) b.setAttribute('aria-pressed', String(b === btn));
+      const info = slotData[key];
+      if (info) {
+        crowdOutput.innerHTML = `<strong>${info.title}</strong><p>${info.desc}</p>`;
+      }
+    });
+  }
+}
+
 const destination = document.querySelector('#destination');
 if (destination) {
   const travel = document.querySelector('#travel');
   const route = document.querySelector('#route-link');
+  const isSubpage = location.pathname.includes('/gbk/');
+  const mapPrefix = isSubpage ? 'peta.html#' : 'gbk/peta.html#';
   const guidance = {
-    transit: 'Cek akses dari stasiun MRT atau halte. Lanjutkan ke titik venue pada skema kawasan.',
-    driving: 'Cocokkan gerbang kendaraan dan titik drop-off dengan informasi penyelenggara.',
-    walking: 'Gunakan jalur pejalan kaki dan ikuti petunjuk petugas pada hari acara.',
+    transit: 'Turun di Stasiun MRT Istora Mandiri (Pintu 5/6) atau Halte TransJakarta GBK, lalu ikuti penunjuk arah pedestrian ke pin venue.',
+    driving: 'Masuk melalui Pintu 10 (Jl. Asia Afrika) atau Pintu 5 (Jl. Sudirman) dan gunakan kantong parkir terdekat dari arena tujuan.',
+    walking: 'Masuk melalui jalur hijau pedestrian Pintu 5, Pintu 6, atau Pintu 7 yang terhubung langsung dengan trotoar Sudirman.',
   };
   const note = document.createElement('p');
   note.className = 'note';
@@ -55,8 +92,8 @@ if (destination) {
   route.after(note);
   function updateRoute() {
     const option = destination.selectedOptions[0];
-    route.href = 'peta.html#' + option.dataset.pin;
-    note.textContent = destination.value + '. ' + guidance[travel.value];
+    route.href = mapPrefix + option.dataset.pin;
+    note.textContent = destination.value + ' — ' + guidance[travel.value];
   }
   for (const field of [destination, travel]) field.addEventListener('change', updateRoute);
   updateRoute();

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Direktori venue — Prototipe revamp Gelora Bung Karno.">
-  <title>Direktori venue | Gelora Bung Karno</title>
+  <title>Direktori Arena | Gelora Bung Karno</title>
   <link rel="stylesheet" href="../assets/gbk.css">
   <script defer src="../assets/gbk.js"></script>
 </head>
@@ -14,31 +14,56 @@
     <div class="site-utility"><div class="site-width"><a href="../index.html">← Kajian revamp</a><span>Prototipe desain · Foto ilustratif</span></div></div>
     <div class="site-width site-nav">
       <a class="site-brand" href="../gbk.html" aria-label="Gelora Bung Karno, beranda"><strong>GBK<span>.</span></strong><span>Gelora<br>Bung Karno</span></a>
-      <nav aria-label="Navigasi utama"><a href="venue.html" aria-current="page">Venue</a><a href="agenda.html">Agenda</a><a href="kunjungan.html">Kunjungan</a><a href="sejarah.html">Sejarah</a></nav>
-      <a href="reservasi.html" class="gx-action">Simulasi reservasi ↗</a>
+      <nav aria-label="Navigasi utama"><a href="venue.html" aria-current="page">Direktori Arena</a><a href="agenda.html">Agenda Nasional</a><a href="kunjungan.html">Akses & Peta</a><a href="sejarah.html">Warisan 1962</a></nav>
+      <a href="reservasi.html" class="gx-action">Booking Arena ↗</a>
     </div>
   </header>
   <main id="main">
-<header class="gx-page"><div class="site-width"><h1>Pilih arena.</h1><p>Filter berdasarkan kegiatan. Buka detail untuk melihat orientasi, ketentuan, dan jalur reservasi.</p></div></header>
+    <header class="gx-page"><div class="site-width"><p class="eyebrow eyebrow-badge">30+ Fasilitas Olahraga & Rekreasi</p><h1>Pilih Arena.</h1><p>Filter berdasarkan cabang olahraga atau kegiatan publik. Buka detail untuk melihat orientasi gerbang, spesifikasi sertifikasi, dan jalur reservasi.</p></div></header>
     <section class="site-width page-block directory">
       <div class="gx-filter" role="group" aria-label="Filter aktivitas">
-        <button type="button" value="all" aria-pressed="true">Semua</button><button type="button" value="atletik" aria-pressed="false">Atletik & bola</button><button type="button" value="indoor" aria-pressed="false">Olahraga indoor</button><button type="button" value="renang" aria-pressed="false">Renang</button><button type="button" value="tenis" aria-pressed="false">Tenis</button><button type="button" value="taman" aria-pressed="false">Ruang terbuka</button>
+        <button type="button" value="all" aria-pressed="true">Semua Arena</button>
+        <button type="button" value="atletik" aria-pressed="false">Atletik & Sepak Bola</button>
+        <button type="button" value="indoor" aria-pressed="false">Olahraga Indoor</button>
+        <button type="button" value="renang" aria-pressed="false">Renang & Akuatik</button>
+        <button type="button" value="tenis" aria-pressed="false">Tenis</button>
+        <button type="button" value="taman" aria-pressed="false">Ruang Terbuka Hijau</button>
       </div>
-      <p id="gbk-result" class="note" aria-live="polite">6 venue</p>
-      <div class="gx-grid"><a class="gx-tile" href="stadion-utama.html" data-sport="atletik">
-      <div class="gx-tile-photo"><img src="../assets/gbk-venue.webp" alt="" loading="lazy"></div>
-      <div class="gx-tile-copy"><small>Sepak bola · Stadion</small><strong>Stadion Utama</strong><span aria-hidden="true">↗</span></div></a><a class="gx-tile" href="istora.html" data-sport="indoor">
-      <div class="gx-tile-photo"><img src="../assets/gbk-indoor.webp" alt="" loading="lazy"></div>
-      <div class="gx-tile-copy"><small>Bulu tangkis · Basket · Voli</small><strong>Istora Senayan</strong><span aria-hidden="true">↗</span></div></a><a class="gx-tile" href="akuatik.html" data-sport="renang">
-      <div class="gx-tile-photo"><img src="../assets/gbk-aquatic.webp" alt="" loading="lazy"></div>
-      <div class="gx-tile-copy"><small>Renang · Olahraga air</small><strong>Stadion Akuatik</strong><span aria-hidden="true">↗</span></div></a><a class="gx-tile" href="madya.html" data-sport="atletik">
-      <div class="gx-tile-photo"><div class="court-mark court-atletik" aria-hidden="true"><i></i></div></div>
-      <div class="gx-tile-copy"><small>Atletik · Sepak bola</small><strong>Stadion Madya</strong><span aria-hidden="true">↗</span></div></a><a class="gx-tile" href="tenis.html" data-sport="tenis">
-      <div class="gx-tile-photo"><div class="court-mark court-tenis" aria-hidden="true"><i></i></div></div>
-      <div class="gx-tile-copy"><small>Tenis · Outdoor</small><strong>Tennis Center Court</strong><span aria-hidden="true">↗</span></div></a><a class="gx-tile" href="hutan-kota.html" data-sport="taman">
-      <div class="gx-tile-photo"><div class="court-mark court-taman" aria-hidden="true"><i></i></div></div>
-      <div class="gx-tile-copy"><small>Ruang terbuka · Taman</small><strong>Hutan Kota</strong><span aria-hidden="true">↗</span></div></a></div>
-      <p class="note">Direktori ini menampilkan enam venue pilihan. Lapangan dan fasilitas lain dapat ditambahkan ke direktori.</p><a href="reservasi.html" class="gx-text">Coba reservasi venue ↗</a>
+      <p id="gbk-result" class="note" aria-live="polite">Menampilkan 6 arena berstandar internasional</p>
+      <div class="gx-grid">
+        <a class="gx-tile" href="stadion-utama.html" data-sport="atletik">
+          <div class="gx-tile-photo"><img src="../assets/gbk-venue.webp" alt="" loading="lazy"></div>
+          <div class="gx-tile-top"><span class="gx-badge">FIFA · AFC</span><span class="gx-cap">77.193 Kursi</span></div>
+          <div class="gx-tile-copy"><small>Sepak bola · Stadion</small><strong>Stadion Utama</strong><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="gx-tile" href="istora.html" data-sport="indoor">
+          <div class="gx-tile-photo"><img src="../assets/gbk-indoor.webp" alt="" loading="lazy"></div>
+          <div class="gx-tile-top"><span class="gx-badge">BWF · FIBA</span><span class="gx-cap">7.166 Kursi</span></div>
+          <div class="gx-tile-copy"><small>Bulu tangkis · Basket · Voli</small><strong>Istora Senayan</strong><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="gx-tile" href="akuatik.html" data-sport="renang">
+          <div class="gx-tile-photo"><img src="../assets/gbk-aquatic.webp" alt="" loading="lazy"></div>
+          <div class="gx-tile-top"><span class="gx-badge">World Aquatics</span><span class="gx-cap">7.800 Kursi</span></div>
+          <div class="gx-tile-copy"><small>Renang · Olahraga air</small><strong>Stadion Akuatik</strong><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="gx-tile" href="madya.html" data-sport="atletik">
+          <div class="gx-tile-photo"><img src="../assets/gbk-track.webp" alt="" loading="lazy"></div>
+          <div class="gx-tile-top"><span class="gx-badge">IAAF Class 2</span><span class="gx-cap">9.170 Kursi</span></div>
+          <div class="gx-tile-copy"><small>Atletik · Sepak bola</small><strong>Stadion Madya</strong><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="gx-tile" href="tenis.html" data-sport="tenis">
+          <div class="gx-tile-photo"><div class="court-mark court-tenis" aria-hidden="true"><i></i></div></div>
+          <div class="gx-tile-top"><span class="gx-badge">ITF Court</span><span class="gx-cap">3.800 Kursi</span></div>
+          <div class="gx-tile-copy"><small>Tenis · Outdoor</small><strong>Tennis Center Court</strong><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="gx-tile" href="hutan-kota.html" data-sport="taman">
+          <div class="gx-tile-photo"><img src="../assets/gbk-hutankota.webp" alt="" loading="lazy"></div>
+          <div class="gx-tile-top"><span class="gx-badge">Taman Kota</span><span class="gx-cap">4,5 Ha</span></div>
+          <div class="gx-tile-copy"><small>Ruang terbuka · Taman</small><strong>Hutan Kota</strong><span aria-hidden="true">↗</span></div>
+        </a>
+      </div>
+      <p class="note" style="margin-top:20px;">Direktori ini menampilkan enam arena utama. Lapangan ABC, Softball, Panahan, dan Basket Outdoor dapat diakses melalui simulasi reservasi.</p>
+      <a href="reservasi.html" class="gx-action" style="margin-top:8px;">Simulasi Reservasi Venue ↗</a>
     </section>
   </main>
   <footer class="site-footer">
