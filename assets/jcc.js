@@ -16,6 +16,8 @@ if (menuToggle && menuDrawer) {
   });
 }
 
+const SVG_UP_RIGHT = '<svg class="ic" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg>';
+
 // Interactive Event Lookbook Tabs on Homepage
 const lookbookButtons = [...document.querySelectorAll('[data-lookbook]')];
 if (lookbookButtons.length) {
@@ -33,7 +35,7 @@ if (lookbookButtons.length) {
       stat2: '13 Ruang',
       label2: 'Breakout & Komisi Paralel',
       link: 'jcc/acara-forum.html',
-      linkText: 'Lihat Studi Kasus Forum ↗',
+      linkText: `Lihat Studi Kasus Forum ${SVG_UP_RIGHT}`,
     },
     gala: {
       img1: 'assets/jcc-gala.webp',
@@ -48,7 +50,7 @@ if (lookbookButtons.length) {
       stat2: '4.500 Tamu',
       label2: 'Resepsi Standing Buffet',
       link: 'jcc/assembly.html',
-      linkText: 'Jelajahi Assembly Hall ↗',
+      linkText: `Jelajahi Assembly Hall ${SVG_UP_RIGHT}`,
     },
     expo: {
       img1: 'assets/jcc-exhibition.webp',
@@ -63,7 +65,7 @@ if (lookbookButtons.length) {
       stat2: '1.500 kg/m²',
       label2: 'Kapasitas Beban Lantai',
       link: 'jcc/acara-expo.html',
-      linkText: 'Lihat Skema Pameran ↗',
+      linkText: `Lihat Skema Pameran ${SVG_UP_RIGHT}`,
     },
     concert: {
       img1: 'assets/jcc-hero.webp',
@@ -78,7 +80,7 @@ if (lookbookButtons.length) {
       stat2: '360° Pandang',
       label2: 'Tata Kursi Lantai Utama & Balkon',
       link: 'jcc/plenary.html',
-      linkText: 'Spesifikasi Plenary Hall ↗',
+      linkText: `Spesifikasi Plenary Hall ${SVG_UP_RIGHT}`,
     },
   };
 
@@ -100,7 +102,7 @@ if (lookbookButtons.length) {
       document.querySelector('#lb-label-2').textContent = data.label2;
       const link = document.querySelector('#lb-link');
       link.href = data.link;
-      link.textContent = data.linkText;
+      link.innerHTML = data.linkText;
     });
   }
 }

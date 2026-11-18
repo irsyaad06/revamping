@@ -22,6 +22,7 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+.ic { display: inline-block; vertical-align: -0.15em; flex-shrink: 0; }
 
 body {
   margin: 0;
@@ -548,32 +549,77 @@ h1 { font-size: clamp(4rem, 9vw, 9.5rem); }
   margin-top: 8px;
 }
 
-/* Sporty Filter Pills */
-.gx-filter, .actions {
+/* Sporty Single Filter Button & Popover Menu */
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.gx-filter { margin-bottom: 22px; }
-.gx-filter button {
-  border: 1.5px solid #d8c8c5;
-  background: #fff;
-  min-height: 44px;
-  padding: 8px 20px;
-  font-size: .84rem;
+.gx-filter {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 22px;
+  z-index: 15;
+}
+.gx-filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 10px 22px;
+  font-size: .85rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .04em;
-  border-radius: 999px 14px 999px 14px;
-  transition: all .2s ease;
+  color: #fff;
+  background: linear-gradient(135deg, var(--red), var(--deep-red));
+  border: 1.5px solid var(--deep-red);
+  border-radius: 999px 16px 999px 16px;
+  box-shadow: 0 8px 20px rgba(206, 18, 50, 0.26);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.gx-filter button:hover,
-.gx-filter [aria-pressed=true] {
+.gx-filter-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(206, 18, 50, 0.36);
+}
+.gx-filter-chev {
+  transition: transform .22s ease;
+}
+.gx-filter-trigger[aria-expanded="true"] .gx-filter-chev {
+  transform: rotate(180deg);
+}
+.gx-filter-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px 8px 22px 8px;
+  padding: 10px;
+  box-shadow: 0 20px 44px rgba(24, 15, 18, 0.18);
+  display: grid;
+  gap: 6px;
+}
+.gx-filter-menu button {
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  background: #f8f3f1;
+  min-height: 42px;
+  padding: 8px 16px;
+  font-size: .82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  border-radius: 999px 12px 999px 12px;
+  transition: all .18s ease;
+}
+.gx-filter-menu button:hover,
+.gx-filter-menu [aria-pressed=true] {
   color: #fff;
   background: linear-gradient(135deg, var(--red), var(--deep-red));
   border-color: var(--deep-red);
-  box-shadow: 0 6px 16px rgba(206, 18, 50, 0.28);
-  transform: translateY(-2px);
 }
 
 /* Venue Grid & Cards */

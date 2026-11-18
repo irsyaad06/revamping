@@ -60,18 +60,46 @@ if (carousel) {
 
 const filters = document.querySelector('.gx-filter');
 if (filters) {
-  const buttons = [...filters.querySelectorAll('button')];
+  const trigger = filters.querySelector('.gx-filter-trigger');
+  const labelEl = filters.querySelector('[data-filter-label]');
+  const menu = filters.querySelector('.gx-filter-menu');
+  const buttons = [...filters.querySelectorAll('.gx-filter-menu button, button[value]')];
   const venues = [...document.querySelectorAll('[data-sport]')];
   const status = document.querySelector('#gbk-result');
   const requested = new URLSearchParams(location.search).get('olahraga');
 
+  function closeFilterMenu() {
+    if (trigger && menu) {
+      trigger.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+    }
+  }
+
+  if (trigger && menu) {
+    trigger.addEventListener('click', () => {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', String(!expanded));
+      menu.hidden = expanded;
+    });
+    document.addEventListener('click', event => {
+      if (!filters.contains(event.target)) closeFilterMenu();
+    });
+  }
+
   function filterVenues(value) {
-    for (const button of buttons) button.setAttribute('aria-pressed', String(button.value === value));
+    for (const button of buttons) {
+      const active = button.value === value;
+      button.setAttribute('aria-pressed', String(active));
+      if (active && labelEl) {
+        labelEl.textContent = `Filter: ${button.textContent}`;
+      }
+    }
     for (const venue of venues) venue.hidden = value !== 'all' && venue.dataset.sport !== value;
     if (status) {
       status.hidden = false;
       status.textContent = `Menampilkan ${venues.filter(venue => !venue.hidden).length} arena berstandar internasional`;
     }
+    closeFilterMenu();
   }
 
   for (const button of buttons) button.addEventListener('click', () => filterVenues(button.value));

@@ -25,6 +25,7 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+.ic { display: inline-block; vertical-align: -0.15em; flex-shrink: 0; }
 
 body {
   margin: 0;
@@ -526,10 +527,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible, .table-scroll:focu
   font-size: .8rem;
   font-weight: 600;
 }
+.persona-needs li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .persona-needs li::before {
-  content: "→ ";
-  color: var(--violet);
-  font-weight: 800;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--violet);
+  flex-shrink: 0;
 }
 
 /* 3. PROGRAMMING LANGUAGE & TECH STACK BENCHMARK */
