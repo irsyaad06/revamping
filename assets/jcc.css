@@ -1104,25 +1104,90 @@ form .note { color: #efdcdd; margin: 0; }
 
 /* Footer */
 .site-footer {
-  background: var(--espresso);
+  background: linear-gradient(180deg, #211314 0%, #160c0d 100%);
   color: var(--ivory);
-  padding-block: 42px 32px;
+  border-top: 1px solid rgba(229, 195, 137, 0.25);
+  padding-block: 56px 34px;
 }
 .site-footer .site-brand { color: var(--ivory); }
 .site-footer .site-brand::before { background: var(--gold); color: var(--espresso); }
 .site-footer .site-width {
+  display: block;
+}
+.jx-footer-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1fr 1.15fr;
+  gap: clamp(24px, 4vw, 48px);
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255, 253, 249, 0.12);
+  margin-bottom: 24px;
+  align-items: start;
+}
+.jx-footer-col h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.jx-footer-col p {
+  font-size: .88rem;
+  line-height: 1.65;
+  color: #dccbc0;
+  margin-top: 14px;
+  max-width: 350px;
+}
+.jx-footer-col ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  font-size: .88rem;
+  color: #e4d6cc;
+}
+.jx-footer-col ul a {
+  color: #e4d6cc;
+  transition: color .2s ease, transform .2s ease;
+  display: inline-block;
+}
+.jx-footer-col ul a:hover {
+  color: var(--gold);
+  transform: translateX(3px);
+  text-decoration: none;
+}
+.jx-footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
   flex-wrap: wrap;
+  width: 100%;
+}
+.jx-footer-bottom small {
+  color: #b7a399;
+  font-size: .82rem;
 }
 .site-footer nav {
   display: flex;
   align-items: center;
-  gap: clamp(14px, 2.5vw, 32px);
+  gap: 10px;
   flex-wrap: wrap;
-  font-size: .88rem;
+}
+.site-footer nav a {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 253, 249, 0.06);
+  border: 1px solid rgba(255, 253, 249, 0.14);
+  font-size: .8rem;
+  color: var(--ivory);
+  transition: background .2s ease, color .2s ease;
+}
+.site-footer nav a:hover {
+  background: var(--gold);
+  color: var(--espresso);
+  border-color: var(--gold);
+  text-decoration: none;
 }
 
 @media (max-width: 980px) {
@@ -1139,7 +1204,8 @@ form .note { color: #efdcdd; margin: 0; }
   .jx-triptych {
     grid-template-columns: 1fr 1fr;
   }
-  .jx-panorama-bar {
+  .jx-panorama-bar,
+  .jx-footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1195,7 +1261,8 @@ form .note { color: #efdcdd; margin: 0; }
   .jx-lookbook-visuals figure:nth-child(2) {
     margin-top: 0;
   }
-  .jx-panorama-bar {
+  .jx-panorama-bar,
+  .jx-footer-grid {
     grid-template-columns: 1fr;
   }
   .jx-controls {
