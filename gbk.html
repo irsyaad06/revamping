@@ -1,10 +1,102 @@
 <!doctype html>
 <html lang="id">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GBK. | Gelora Bung Karno</title>
-<link rel="stylesheet" href="assets/style.css"><script defer src="assets/app.js"></script></head>
-<body class="gbk">
-<div class="top"><div class="wrap"><a href="index.html">← Kembali ke analisis</a><span>Konsep desain · Data dan visual ilustratif</span></div></div>
-<header class="mast"><div class="wrap"><a class="brand" href="gbk.html">GBK.</a><nav class="nav" aria-label="Navigasi utama"><a href="#venue">Venue</a><a href="#agenda">Agenda</a><a href="#akses">Akses kawasan</a><a class="btn" href="https://reservation.gbk.id/">Reservasi ↗</a></nav></div></header>
-<main><section class="hero"><div class="wrap"><p class="kicker">Gelora Bung Karno · Senayan, Jakarta</p><h1>Jelajahi<br>kawasan GBK.</h1><p class="lead">Temukan tempat olahraga, lihat agenda, dan rencanakan kedatanganmu ke Gelora Bung Karno.</p><div class="actions"><a class="btn" href="#venue">Jelajahi venue ↓</a><a class="btn alt" href="#agenda">Lihat agenda</a></div></div></section><section class="band " id="venue"><div class="wrap"><div class="head"><h2>Temukan venue</h2></div><div class="head"><div class="chips" data-filters aria-label="Kategori venue"><button class="chip" type="button" value="all" aria-pressed="true">Semua venue</button><button class="chip" type="button" value="outdoor" aria-pressed="false">Luar ruangan</button><button class="chip" type="button" value="indoor" aria-pressed="false">Dalam ruangan</button></div></div><p id="result-count" class="subtle small" aria-live="polite"></p><div class="grid "><article class="card" data-category="outdoor"><img src="assets/gbk-venue.webp" alt="" loading="lazy"><div class="pad"><span class="tag">Luar ruangan</span><h3>Stadion Utama</h3><p>Lapangan & lintasan atletik · Senayan</p><button class="btn" type="button" data-dialog="stadion" data-venue="">Lihat venue ↗</button></div></article><article class="card" data-category="indoor"><img src="assets/gbk-indoor.webp" alt="" loading="lazy"><div class="pad"><span class="tag">Dalam ruangan</span><h3>Istora Senayan</h3><p>Arena dalam ruangan · Senayan</p><button class="btn" type="button" data-dialog="istora" data-venue="">Lihat venue ↗</button></div></article><article class="card" data-category="indoor"><img src="assets/gbk-aquatic.webp" alt="" loading="lazy"><div class="pad"><span class="tag">Dalam ruangan</span><h3>Stadion Akuatik</h3><p>Fasilitas akuatik · Senayan</p><button class="btn" type="button" data-dialog="aquatic" data-venue="">Lihat venue ↗</button></div></article></div></div></section><section class="band " id="agenda"><div class="wrap"><div class="head"><h2>Agenda kawasan</h2></div><p class="subtle small">Agenda contoh untuk simulasi antarmuka.</p><article class="event"><time>12 Des</time><div><h3>Festival Olahraga Senayan</h3><p class="subtle">Stadion Utama</p></div><a href="#akses">Info kedatangan ↗</a></article><article class="event"><time>19 Des</time><div><h3>Kejuaraan Akuatik Jakarta</h3><p class="subtle">Stadion Akuatik</p></div><a href="#akses">Info kedatangan ↗</a></article></div></section><section class="band callout" id="akses"><div class="wrap"><div class="head"><h2>Rencanakan kedatangan</h2></div><div class="grid two"><article class="card" ><div class="pad"><h3>Transportasi umum</h3><p>Cari rute ke kawasan Senayan dan lanjutkan navigasi ke venue tujuan.</p><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Gelora+Bung+Karno">Buka peta kawasan ↗</a></div></article><article class="card" ><div class="pad"><h3>Akses pada hari acara</h3><p>Periksa akses masuk, titik drop-off, dan ketentuan parkir melalui panduan resmi acara.</p><a class="btn alt" href="https://gbk.id/">Cek informasi GBK ↗</a></div></article></div></div></section><dialog id="stadion" aria-label="Stadion Utama"><button class="close" type="button" data-close aria-label="Tutup">×</button><h2>Stadion Utama</h2><div style="margin-top:16px"><p>Venue utama untuk pertandingan, pertunjukan, dan agenda berskala besar.</p><p class="lead"><strong>Orientasi kawasan</strong><br>Kawasan Stadion Utama, Senayan. Konfirmasi gerbang yang berlaku pada panduan acara.</p><div class="actions"><a class="btn" href="https://reservation.gbk.id/">Buka reservasi resmi ↗</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Stadion+Utama+GBK">Buka peta ↗</a></div></div></dialog><dialog id="istora" aria-label="Istora Senayan"><button class="close" type="button" data-close aria-label="Tutup">×</button><h2>Istora Senayan</h2><div style="margin-top:16px"><p>Arena multifungsi untuk olahraga indoor dan pertunjukan.</p><p class="lead"><strong>Orientasi kawasan</strong><br>Kawasan Istora, Senayan. Konfirmasi gerbang yang berlaku pada panduan acara.</p><div class="actions"><a class="btn" href="https://reservation.gbk.id/">Buka reservasi resmi ↗</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Istora+Senayan+GBK">Buka peta ↗</a></div></div></dialog><dialog id="aquatic" aria-label="Stadion Akuatik"><button class="close" type="button" data-close aria-label="Tutup">×</button><h2>Stadion Akuatik</h2><div style="margin-top:16px"><p>Fasilitas renang dan olahraga air. Cek ketentuan penggunaan pada portal resmi.</p><p class="lead"><strong>Orientasi kawasan</strong><br>Kawasan Stadion Akuatik, Senayan. Konfirmasi gerbang yang berlaku pada panduan acara.</p><div class="actions"><a class="btn" href="https://reservation.gbk.id/">Buka reservasi resmi ↗</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Stadion+Akuatik+GBK">Buka peta ↗</a></div></div></dialog></main>
-<footer class="foot"><div class="wrap"><span>GBK. · Studi revamp</span><nav class="nav" aria-label="Halaman studi"><a href="index.html">Analisis</a><a href="gbk.html">Desain GBK</a><a href="jcc.html">Desain JCC</a></nav></div></footer>
-</body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Konsep portal Gelora Bung Karno untuk mencari venue, agenda, dan akses kawasan.">
+  <title>Gelora Bung Karno — Jelajahi kawasan</title>
+  <link rel="stylesheet" href="assets/gbk.css">
+  <script src="assets/gbk.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Langsung ke konten</a>
+  <div class="utility"><div class="shell"><a href="index.html">← Kajian revamp</a><span>Prototipe · Visual dan agenda ilustratif</span></div></div>
+  <header class="mast">
+    <div class="shell mast-inner">
+      <a class="brand" href="gbk.html"><strong>GBK<span>.</span></strong><span>Gelora<br>Bung Karno</span></a>
+      <nav aria-label="Navigasi utama">
+        <a href="#venue">Venue</a><a href="#agenda">Agenda</a><a href="#akses">Akses kawasan</a>
+      </nav>
+      <a class="button primary reserve" href="https://reservation.gbk.id/">Reservasi <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo"><img src="assets/gbk-hero.webp" alt="Ilustrasi panorama Stadion Utama dan cakrawala Jakarta" width="836" height="470" fetchpriority="high"></div>
+      <div class="shell hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Senayan, Jakarta</p>
+          <h1 id="hero-title">Jakarta<br>bergerak <em>di sini.</em></h1>
+          <p>Cari tempat olahraga, cek agenda, dan temukan jalan masuk ke Gelora Bung Karno.</p>
+          <a class="button primary" href="#venue">Temukan venue <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="photo-label">Stadion Utama Gelora Bung Karno</p>
+      </div>
+    </section>
+    <nav class="quick shell" aria-label="Rencanakan kunjungan">
+      <a href="#venue"><span class="quick-icon" aria-hidden="true">⌕</span><span><strong>Olahraga</strong><small>Cari fasilitas sesuai aktivitas</small></span><span aria-hidden="true">↗</span></a>
+      <a href="#agenda"><span class="quick-icon" aria-hidden="true">▤</span><span><strong>Agenda</strong><small>Lihat kegiatan di kawasan</small></span><span aria-hidden="true">↗</span></a>
+      <a href="#akses"><span class="quick-icon" aria-hidden="true">◎</span><span><strong>Petunjuk arah</strong><small>Temukan venue tujuan</small></span><span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <section class="shell section" id="venue">
+      <div class="section-heading"><h2>Ke mana hari ini?</h2><p>Pilih aktivitas untuk melihat venue yang relevan.</p></div>
+      <div class="filters" role="group" aria-label="Filter aktivitas">
+        <button type="button" value="all" aria-pressed="true">Semua venue</button>
+        <button type="button" value="atletik" aria-pressed="false">Sepak bola & atletik</button>
+        <button type="button" value="indoor" aria-pressed="false">Olahraga indoor</button>
+        <button type="button" value="renang" aria-pressed="false">Renang</button>
+      </div>
+      <p id="venue-status" class="sr" aria-live="polite"></p>
+      <div class="venue-grid">
+        <article class="venue" data-activity="atletik">
+          <img src="assets/gbk-venue.webp" alt="" width="836" height="471" loading="lazy">
+          <div class="venue-copy"><p>Sepak bola · Atletik</p><h3>Stadion Utama</h3><button type="button" data-open="stadion" aria-label="Detail Stadion Utama">↗</button></div>
+        </article>
+        <article class="venue" data-activity="indoor">
+          <img src="assets/gbk-indoor.webp" alt="" width="583" height="532" loading="lazy">
+          <div class="venue-copy"><p>Olahraga indoor</p><h3>Istora Senayan</h3><button type="button" data-open="istora" aria-label="Detail Istora Senayan">↗</button></div>
+        </article>
+        <article class="venue" data-activity="renang">
+          <img src="assets/gbk-aquatic.webp" alt="" width="583" height="532" loading="lazy">
+          <div class="venue-copy"><p>Renang · Olahraga air</p><h3>Stadion Akuatik</h3><button type="button" data-open="akuatik" aria-label="Detail Stadion Akuatik">↗</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="agenda" id="agenda">
+      <div class="shell agenda-inner">
+        <div><p class="eyebrow">Desember · Agenda contoh</p><h2>Di kalender<br>kawasan.</h2><p class="section-note">Untuk jadwal aktual, cek pengumuman resmi GBK dan penyelenggara.</p><a class="text-link" href="https://gbk.id/">Lihat situs resmi GBK ↗</a></div>
+        <div class="event-list">
+          <article><div class="date"><strong>12</strong><span>DES</span></div><div><h3>Festival Olahraga Senayan</h3><p>Stadion Utama</p></div><button type="button" data-open="stadion" aria-label="Lokasi Festival Olahraga Senayan">↗</button></article>
+          <article><div class="date"><strong>19</strong><span>DES</span></div><div><h3>Kejuaraan Akuatik Jakarta</h3><p>Stadion Akuatik</p></div><button type="button" data-open="akuatik" aria-label="Lokasi Kejuaraan Akuatik Jakarta">↗</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section access" id="akses">
+      <div><h2>Sebelum berangkat.</h2><p class="section-note">Gunakan pin venue sebagai tujuan. Pada hari acara, cek gerbang dan titik drop-off yang ditentukan penyelenggara.</p></div>
+      <div class="routes">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Gelora+Bung+Karno">Peta kawasan GBK <span aria-hidden="true">↗</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=MRT+Istora+Mandiri">Stasiun MRT Istora Mandiri <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell footer-inner"><span>Gelora Bung Karno · Konsep revamp</span><a href="index.html">Kajian revamp</a><a href="jcc.html">Lihat konsep JCC ↗</a></div></footer>
+  <dialog id="stadion" aria-labelledby="stadion-title">
+    <button type="button" data-close aria-label="Tutup detail">×</button><h2 id="stadion-title">Stadion Utama</h2>
+    <p>Venue untuk pertandingan, atletik, pertunjukan, dan acara berskala besar. Gunakan pin stadion untuk orientasi dan cek gerbang sesuai acara.</p>
+    <div class="dialog-links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&amp;query=Stadion+Utama+GBK">Petunjuk arah ↗</a><a class="text-link" href="https://reservation.gbk.id/">Portal reservasi ↗</a></div>
+  </dialog>
+  <dialog id="istora" aria-labelledby="istora-title">
+    <button type="button" data-close aria-label="Tutup detail">×</button><h2 id="istora-title">Istora Senayan</h2>
+    <p>Arena dalam ruangan untuk olahraga dan pertunjukan. Cek informasi dari penyelenggara untuk titik masuk pada hari acara.</p>
+    <div class="dialog-links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&amp;query=Istora+Senayan">Petunjuk arah ↗</a><a class="text-link" href="https://reservation.gbk.id/">Portal reservasi ↗</a></div>
+  </dialog>
+  <dialog id="akuatik" aria-labelledby="akuatik-title">
+    <button type="button" data-close aria-label="Tutup detail">×</button><h2 id="akuatik-title">Stadion Akuatik</h2>
+    <p>Fasilitas renang dan olahraga air. Periksa ketentuan, jadwal, dan ketersediaan pada portal resmi sebelum datang.</p>
+    <div class="dialog-links"><a class="button primary" href="https://www.google.com/maps/search/?api=1&amp;query=Stadion+Akuatik+GBK">Petunjuk arah ↗</a><a class="text-link" href="https://reservation.gbk.id/">Portal reservasi ↗</a></div>
+  </dialog>
+</body>
+</html>
