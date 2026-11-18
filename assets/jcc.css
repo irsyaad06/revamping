@@ -1210,19 +1210,31 @@ form .note { color: #efdcdd; margin: 0; }
   }
 }
 
+@media (max-width: 860px) {
+  .site-utility span {
+    display: none;
+  }
+  .site-nav nav {
+    display: none;
+  }
+}
+
 @media (max-width: 780px) {
   .site-width { width: calc(100% - 36px); }
   .site-nav {
-    border-radius: 26px;
-    flex-wrap: wrap;
-    padding: 10px 14px;
+    border-radius: var(--radius-pill);
+    flex-wrap: nowrap;
+    padding: 7px 10px;
+    min-height: 52px;
   }
-  .site-nav nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    padding-top: 6px;
-    border-top: 1px solid var(--line);
+  .site-nav > .jx-outline {
+    padding: 7px 14px;
+    font-size: .74rem;
+    min-height: 36px;
+  }
+  .jx-menu-pill {
+    padding: 7px 13px;
+    font-size: .75rem;
   }
   .jx-arc-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -1,3 +1,27 @@
+const gbkMenuBtn = document.querySelector('[data-gbk-menu]');
+if (gbkMenuBtn) {
+  const navContainer = gbkMenuBtn.closest('.site-nav');
+  gbkMenuBtn.addEventListener('click', () => {
+    const isOpen = navContainer.classList.toggle('is-open');
+    gbkMenuBtn.setAttribute('aria-expanded', String(isOpen));
+    gbkMenuBtn.textContent = isOpen ? '✕ Tutup' : '☰ Menu';
+  });
+  document.addEventListener('click', event => {
+    if (!navContainer.contains(event.target) && navContainer.classList.contains('is-open')) {
+      navContainer.classList.remove('is-open');
+      gbkMenuBtn.setAttribute('aria-expanded', 'false');
+      gbkMenuBtn.textContent = '☰ Menu';
+    }
+  });
+  for (const link of navContainer.querySelectorAll('nav a')) {
+    link.addEventListener('click', () => {
+      navContainer.classList.remove('is-open');
+      gbkMenuBtn.setAttribute('aria-expanded', 'false');
+      gbkMenuBtn.textContent = '☰ Menu';
+    });
+  }
+}
+
 const carousel = document.querySelector('[data-carousel]');
 if (carousel) {
   const frames = [...carousel.querySelectorAll('[data-slide]')];
